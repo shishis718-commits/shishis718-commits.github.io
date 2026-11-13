@@ -2,20 +2,21 @@
 
 「纸上星球」是一个用来收藏生活、书影音、同人作品、长篇随笔与兴趣爱好的个人档案馆。
 
-## 启用网站
+## 网站发布
 
-1. 打开仓库的 **Settings → Pages**。
-2. 在 **Build and deployment** 中，将 **Source** 设为 **GitHub Actions**。
-3. 回到 **Actions**，查看 **Deploy GitHub Pages** 工作流。首次发布成功后，网站地址是 <https://shishis718-commits.github.io/>。
+此仓库使用 GitHub Pages 从 main 分支根目录发布。查看或修改设置：**Settings → Pages → Build and deployment**，应为 **Deploy from a branch / main / (root)**。
+
+GitHub Pages 构建成功后，网站地址为：
+<https://shishis718-commits.github.io/>
 
 ## 修改内容
 
-- 首页和各个收藏分类的示例内容都在根目录的 index.html 中。
-- 页面配色、字体、间距和手机适配在 assets/css/style.css 中。
-- 主题切换逻辑在 assets/js/theme.js 中。
-- 页面搜索逻辑在 assets/js/search.js 中。
+- 首页和各个收藏分类的示例内容：根目录的 index.html
+- 页面配色、字体、间距和手机适配：assets/css/style.css
+- 主题切换：assets/js/theme.js
+- 页面搜索：assets/js/search.js
 
-直接编辑对应文件并提交到 main 分支，GitHub Actions 就会重新部署。
+编辑对应文件并提交到 main 分支，GitHub Pages 会自动重新构建和发布。
 
 ## 关于公开内容
 
