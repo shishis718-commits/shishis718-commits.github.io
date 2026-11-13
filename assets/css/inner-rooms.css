@@ -21,3 +21,12 @@
 .page-interests .content-card.is-picked{border-color:var(--detail-accent);box-shadow:0 0 0 1px color-mix(in srgb,var(--detail-accent) 25%,transparent),0 18px 45px #0005}
 @media(max-width:700px){.culture-shelf .shelf-track{grid-template-columns:1fr}.mood-options button,.culture-filters button,.interest-filters button{padding:10px 12px}}
 @media(prefers-reduced-motion:reduce){.mood-options button,.culture-filters button,.interest-filters button,.prompt-button,.random-interest,.page-interests .content-card{transition:none}}
+
+/* Unified placement: controls belong to their parent content section */
+.daily-inline-tools{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:18px}
+.daily-inline-tools .daily-mood,.daily-inline-tools .daily-prompt{margin:0;min-width:0}
+.page-culture .culture-filters{position:relative;margin:0 0 8px;padding:12px 0;border-bottom:1px solid var(--line)}
+.page-culture .culture-shelf{padding:clamp(18px,2.5vw,28px);background:linear-gradient(120deg,#292020,#191817 75%)}
+.page-interests .interest-discovery{padding:18px 22px;margin:0 0 22px;background:linear-gradient(110deg,#25271d,#191817 75%)}
+.page-interests .interest-discovery h3{font-size:20px}
+@media(max-width:700px){.daily-inline-tools{grid-template-columns:1fr}.page-interests .interest-discovery{padding:18px}}
