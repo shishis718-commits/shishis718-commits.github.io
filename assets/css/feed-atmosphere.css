@@ -35,3 +35,48 @@
 .ap-secret-hint:hover{opacity:1}
 @media(max-width:700px){.ap-feed-art{position:relative;top:auto;right:auto;width:min(47vw,190px);margin:38px 9% 10px auto}.ap-feed-hero{padding-bottom:65px}.ap-feed-hero:after{right:-12%;top:12%}.ap-feed-art-note{left:-20%}.ap-atmosphere-star{display:none}.ap-secret-hint{right:10px;bottom:10px;font-size:8px}}
 @media(prefers-reduced-motion:reduce){.ap-atmosphere-star{display:none}.ap-feed-art,.ap-shark-frame,.ap-feed-star,.ap-title span,.ap-entry-card,.ap-post-cover{transition:none;animation:none}}
+
+
+/* DESKTOP PASS — wider canvas, larger imagery, calmer proportions */
+@media(min-width:900px){
+ body:has(.ap-home) .site-shell{width:min(1680px,calc(100% - 112px))}
+ body:has(.ap-home) .site-header{height:96px;min-height:96px}
+ .ap-feed-hero{min-height:650px;padding:clamp(100px,10vw,155px) 6% 95px}
+ .ap-feed-hero .ap-title{font-size:clamp(82px,8.2vw,138px);max-width:900px}
+ .ap-feed-hero .ap-title-italic{font-size:clamp(78px,7.5vw,126px)}
+ .ap-feed-hero .ap-intro{max-width:590px;font-size:15px;line-height:2.1;margin-top:36px}
+ .ap-feed-art{width:clamp(330px,29vw,460px);right:7%;top:14%}
+ .ap-shark-frame{padding:12px 12px 19px}
+ .ap-shark-frame img{aspect-ratio:4/5;min-height:410px}
+ .ap-shark-frame figcaption{font-size:10px;padding-top:13px}
+ .ap-feed-moon{width:72%}
+ .ap-feed-star{font-size:64px}
+ .ap-feed-art-note{font-size:13px;left:-18%}
+ .ap-timeline-section{padding:clamp(70px,7vw,110px) 7% 110px}
+ .ap-timeline-heading{margin-bottom:38px}
+ .ap-timeline-heading h2{font-size:clamp(38px,3.2vw,54px)}
+ .ap-posts-heading{font-size:11px;margin-bottom:24px}
+ .ap-tag-filter{gap:10px;margin-bottom:46px}
+ .ap-tag-filter button{font-size:11px;padding:10px 16px}
+ .ap-year-marker{margin-left:190px;font-size:30px}
+ .ap-timeline-entry{grid-template-columns:190px minmax(0,1fr)}
+ .ap-entry-date{font-size:12px;padding:34px 32px 40px 0}
+ .ap-entry-date i{right:-5px;top:39px;width:11px;height:11px}
+ .ap-entry-card{grid-template-columns:minmax(250px,320px) minmax(0,1fr)!important;gap:28px;margin:0 0 28px 36px;padding:30px 34px}
+ .ap-entry-card:has(.ap-post-cover){grid-template-columns:minmax(250px,320px) minmax(0,1fr)}
+ .ap-post-cover{width:100%;max-height:none;min-height:340px;aspect-ratio:3/4;object-fit:contain;background:#111;box-shadow:0 18px 36px #0007}
+ .ap-post-copy h3{font-size:clamp(27px,2.4vw,36px);margin-bottom:14px}
+ .ap-post-excerpt{font-size:14px;line-height:2;margin-bottom:20px}
+ .ap-post-tag{font-size:10px;padding:6px 10px}
+ .ap-post-details summary{font-size:11px}
+ .ap-post-body{font-size:15px;line-height:2.15}
+ .ap-footer{margin:0 7%;padding:32px 0 42px;font-size:10px}
+}
+@media(min-width:1400px){
+ .ap-feed-hero{min-height:720px}
+ .ap-feed-art{width:440px;right:10%;top:13%}
+ .ap-feed-hero .ap-title{font-size:142px}
+ .ap-feed-hero .ap-title-italic{font-size:132px}
+ .ap-entry-card{grid-template-columns:340px minmax(0,1fr)!important;padding:36px 40px}
+ .ap-post-cover{min-height:390px}
+}
