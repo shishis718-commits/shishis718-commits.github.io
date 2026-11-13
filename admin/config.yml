@@ -1,8 +1,8 @@
 # Apple Planet — Decap CMS
-# Setup: create a Decap Turbo site for this repository, then replace the Site ID below.
+# Decap Turbo site configuration
 backend:
   name: turbo-github
-  turbo_site_id: REPLACE_WITH_DECAP_TURBO_SITE_ID
+  turbo_site_id: 87826d77-8e0f-46eb-9ef4-e0bfe34fdd06
   branch: main
 
 site_url: https://shishis718-commits.github.io
