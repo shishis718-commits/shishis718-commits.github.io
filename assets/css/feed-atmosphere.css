@@ -82,31 +82,26 @@
 }
 
 
-/* SHARK PHOTO SCRAPBOOK — scattered snapshots around the hero */
-.ap-feed-hero{position:relative}
-.ap-shark-scatter{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:visible}
-.ap-scatter-photo{position:absolute;width:clamp(105px,13vw,178px);margin:0;padding:7px 7px 17px;background:#e8dfce;color:#29251f;box-shadow:0 18px 42px #0008;transform-origin:center;transition:transform .65s cubic-bezier(.2,.8,.2,1),box-shadow .65s}
-.ap-scatter-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.82) contrast(1.04)}
-.ap-scatter-photo figcaption{padding:8px 1px 0;font:7px var(--ap-mono);letter-spacing:.1em;white-space:nowrap}
-.ap-scatter-one{left:4%;top:13%;transform:rotate(-10deg)}
-.ap-scatter-two{left:9%;bottom:9%;transform:rotate(7deg)}
-.ap-scatter-three{right:4%;bottom:8%;transform:rotate(9deg)}
-.ap-scatter-one:hover{transform:rotate(-4deg) translateY(-9px) scale(1.04)}
-.ap-scatter-two:hover{transform:rotate(2deg) translateY(-9px) scale(1.04)}
-.ap-scatter-three:hover{transform:rotate(3deg) translateY(-9px) scale(1.04)}
-.ap-feed-art{z-index:3}
-.ap-feed-scroll{position:relative;z-index:4;cursor:pointer}
+/* DESKTOP HERO — one confident shark portrait, balanced with the headline */
 @media(min-width:900px){
- .ap-scatter-one{left:3%;top:12%;width:clamp(145px,14vw,205px)}
- .ap-scatter-two{left:8%;bottom:7%;width:clamp(130px,12vw,180px)}
- .ap-scatter-three{right:3%;bottom:5%;width:clamp(145px,13vw,195px)}
+ .ap-feed-hero{min-height:690px;padding:clamp(112px,11vw,165px) 6% 100px}
+ .ap-feed-hero .ap-title{position:relative;z-index:1;width:58%;max-width:760px;font-size:clamp(76px,7.1vw,118px)}
+ .ap-feed-hero .ap-title-italic{font-size:clamp(72px,6.7vw,110px)}
+ .ap-feed-hero .ap-intro{position:relative;z-index:1;width:48%;max-width:540px}
+ .ap-feed-art{width:clamp(320px,29vw,430px);right:6.5%;top:17%;z-index:2}
+ .ap-shark-frame{padding:12px 12px 20px;transform:rotate(2deg)}
+ .ap-shark-frame img{width:100%;height:clamp(390px,37vw,500px);min-height:0;aspect-ratio:auto;object-fit:cover;object-position:center}
+ .ap-feed-moon{width:70%;right:-12%;top:-12%}
+ .ap-feed-orbit{right:40%;top:16%;font-size:54px}
+ .ap-feed-scroll{left:6%;bottom:30px}
 }
-@media(max-width:700px){
- .ap-shark-scatter{position:relative;height:125px;margin-top:-20px}
- .ap-scatter-photo{width:clamp(82px,25vw,112px);padding:5px 5px 12px}
- .ap-scatter-one{left:2%;top:2px}
- .ap-scatter-two{left:36%;top:28px}
- .ap-scatter-three{right:2%;top:-4px}
- .ap-scatter-photo figcaption{font-size:6px}
+@media(min-width:1400px){
+ .ap-feed-hero{min-height:740px}
+ .ap-feed-art{width:440px;right:8%;top:15%}
+ .ap-shark-frame img{height:510px}
+ .ap-feed-hero .ap-title{font-size:126px}
+ .ap-feed-hero .ap-title-italic{font-size:116px}
 }
-@media(prefers-reduced-motion:reduce){.ap-scatter-photo{transition:none}}
+@media(max-width:899px){
+ .ap-feed-art{margin-left:auto;margin-right:8%;width:min(48vw,260px)}
+}
