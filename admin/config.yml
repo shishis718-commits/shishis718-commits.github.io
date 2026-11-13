@@ -1,5 +1,4 @@
 # Apple Planet — Decap CMS
-# Decap Turbo site configuration
 backend:
   name: turbo-github
   turbo_site_id: 87826d77-8e0f-46eb-9ef4-e0bfe34fdd06
@@ -8,10 +7,8 @@ backend:
 site_url: https://shishis718-commits.github.io
 display_url: https://shishis718-commits.github.io
 locale: zh_Hans
-
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
-
 publish_mode: simple
 
 collections:
@@ -19,28 +16,25 @@ collections:
     label: "苹果星球"
     files:
       - name: "articles"
-        label: "文章管理"
+        label: "时间轴内容"
         file: "content/posts.json"
-        description: "在这里创建、修改和删除四个分类页面的文章。保存后会自动提交到 GitHub。"
+        description: "所有内容都会汇入首页时间轴。用标签整理内容，不再区分固定板块；最新发布的内容显示在最上方。"
         fields:
-          - label: "文章列表"
+          - label: "发布内容"
             name: "articles"
             widget: "list"
-            label_singular: "一篇文章"
-            summary: "{{fields.title}} · {{fields.category}}"
+            label_singular: "一条内容"
+            summary: "{{fields.date}} · {{fields.title}}"
             collapsed: true
             fields:
-              - label: "文章标题"
+              - label: "标题"
                 name: "title"
                 widget: "string"
-              - label: "分类"
-                name: "category"
-                widget: "select"
-                options:
-                  - { label: "日常生活", value: "daily" }
-                  - { label: "书影音", value: "culture" }
-                  - { label: "同人档案", value: "fanworks" }
-                  - { label: "兴趣收藏", value: "interests" }
+              - label: "标签"
+                name: "tags"
+                widget: "list"
+                required: false
+                field: { label: "标签名称", name: "tag", widget: "string" }
               - label: "发布日期"
                 name: "date"
                 widget: "datetime"
