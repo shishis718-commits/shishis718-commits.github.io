@@ -20,6 +20,7 @@
 </header>
 
 <main class="ap-home">
+  <div class="ap-scroll-progress" id="apScrollProgress" aria-hidden="true"></div>
   <div class="ap-topline">
     <span>PERSONAL PLANET <strong>●</strong> ISSUE Nº 001</span>
     <span>EST. 2026 / SOMEWHERE</span>
@@ -63,8 +64,14 @@
   <section class="ap-collage ap-reveal" aria-label="A strange little collage">
     <div class="ap-collage-word">COLLECT<br><span>the</span> UNUSUAL.</div>
     <div class="ap-collage-orb" aria-hidden="true"></div>
+    <nav class="ap-orbit-links" aria-label="Explore four collections">
+      <a class="ap-portal portal-life" href="daily.html"><small>01 / EVERYDAY</small><span>日常生活</span><i>↗</i></a>
+      <a class="ap-portal portal-culture" href="culture.html"><small>02 / CULTURE</small><span>书影音</span><i>↗</i></a>
+      <a class="ap-portal portal-fan" href="fanworks.html"><small>03 / FAN ARCHIVE</small><span>同人档案</span><i>↗</i></a>
+      <a class="ap-portal portal-interest" href="interests.html"><small>04 / COLLECTIONS</small><span>兴趣收藏</span><i>↗</i></a>
+    </nav>
     <div class="ap-collage-caption">ODD THINGS / SOFT MEMORIES / RANDOM THOUGHTS</div>
-    <div class="ap-collage-tag">THIS IS MY PLANET ↗</div>
+    <div class="ap-collage-tag">WANDER A LITTLE ↗</div>
   </section>
 
   <footer class="ap-footer">
@@ -96,6 +103,7 @@
   const open=document.getElementById('apOpenMenu');
   const close=document.getElementById('apCloseMenu');
   const toast=document.getElementById('apToast');
+  const progress=document.getElementById('apScrollProgress');
   const showMenu=()=>{menu.classList.add('is-open');menu.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';close.focus();};
   const hideMenu=()=>{menu.classList.remove('is-open');menu.setAttribute('aria-hidden','true');document.body.style.overflow='';open.focus();};
   open.addEventListener('click',showMenu);
@@ -104,10 +112,14 @@
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('is-open'))hideMenu();});
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduced){
+    const updateProgress=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.transform='scaleX('+(max>0?window.scrollY/max:0)+')';};
+    window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();
     const targets=[...document.querySelectorAll('.ap-reveal')];
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.14});
     targets.forEach(el=>observer.observe(el));
     const art=document.getElementById('apParallax');
+    const collage=document.querySelector('.ap-collage');
+    collage.addEventListener('pointermove',e=>{const r=collage.getBoundingClientRect();collage.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');collage.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});
     if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
       art.addEventListener('pointermove',e=>{
         const r=art.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
@@ -118,6 +130,7 @@
     }
   }else{
     document.querySelectorAll('.ap-reveal').forEach(el=>el.classList.add('is-visible'));
+    progress.style.transform='scaleX(0)';
   }
   const messages=['You found a secret.','The shark is watching you.','Nothing happens. Or does it?','Have a strange day. ✳','Welcome back, tiny human.'];
   let last=-1;
