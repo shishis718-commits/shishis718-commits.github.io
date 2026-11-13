@@ -21,10 +21,11 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Extract blog source
+      - name: Prepare static site
         run: |
           mkdir -p site
-          tar -xzf paper-planet-blog.tar.gz -C site
+          cp index.html site/
+          cp -r assets site/assets
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
