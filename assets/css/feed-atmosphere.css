@@ -1,0 +1,37 @@
+/* APPLE PLANET — quiet atmosphere, tactile details */
+.ap-feed-home{--ap-pointer-x:50%;--ap-pointer-y:35%;position:relative}
+.ap-feed-home:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(460px circle at var(--ap-pointer-x) var(--ap-pointer-y),#c8ee700b,transparent 72%);transition:background .25s}
+.ap-feed-hero{isolation:isolate}
+.ap-feed-hero:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.23;pointer-events:none;background-image:radial-gradient(#d8c8a8 0.65px,transparent .8px);background-size:31px 31px;mask-image:linear-gradient(90deg,transparent,#000 55%,transparent)}
+.ap-feed-art{position:absolute;right:8%;top:19%;width:clamp(170px,23vw,285px);z-index:2;transform:rotate(3deg);transition:transform .8s cubic-bezier(.2,.8,.2,1);perspective:900px}
+.ap-feed-art:hover{transform:rotate(0) translateY(-7px)}
+.ap-shark-frame{margin:0;padding:9px 9px 15px;background:#e8dfce;color:#2b2722;box-shadow:0 24px 60px #0007;transform:rotate(-2deg);transition:transform .6s,box-shadow .6s}
+.ap-feed-art:hover .ap-shark-frame{transform:rotate(1deg) scale(1.025);box-shadow:0 30px 75px #0009}
+.ap-shark-frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.78) contrast(1.04);cursor:crosshair}
+.ap-shark-frame figcaption{padding:10px 2px 0;font:8px var(--ap-mono);letter-spacing:.12em}
+.ap-feed-moon{position:absolute;width:65%;aspect-ratio:1;border-radius:50%;right:-13%;top:-13%;background:radial-gradient(circle at 35% 35%,#e4d8b9,#a99c7c 58%,#776d5c 100%);opacity:.85;box-shadow:0 0 65px #d8c49a22;z-index:-1}
+.ap-feed-star{position:absolute;right:-17%;bottom:18%;font-size:clamp(30px,5vw,55px);color:var(--ap-lime);animation:ap-star-float 7s ease-in-out infinite}
+.ap-feed-art-note{position:absolute;left:-22%;bottom:5%;font:italic 11px/1.35 var(--ap-mono);letter-spacing:.12em;color:var(--ap-red);transform:rotate(-8deg)}
+.ap-atmosphere-star{position:fixed;z-index:0;pointer-events:none;color:#d7c9a8;opacity:0;animation:ap-star-drift var(--duration,18s) ease-in-out var(--delay,0s) infinite}
+@keyframes ap-star-drift{0%,100%{opacity:0;transform:translate3d(0,10px,0) rotate(0) scale(.6)}35%,65%{opacity:var(--opacity,.22)}50%{transform:translate3d(0,-24px,0) rotate(35deg) scale(1)}}
+@keyframes ap-star-float{50%{transform:translateY(-12px) rotate(22deg)}}
+.ap-title span{display:block;transition:transform .65s cubic-bezier(.2,.8,.2,1),text-shadow .65s}
+.ap-title:hover span:first-child{transform:translateX(5px)}
+.ap-title:hover span:last-child{transform:translateX(16px);text-shadow:0 8px 35px #c8ee7018}
+.ap-timeline-heading h2{transition:letter-spacing .5s}
+.ap-timeline-heading:hover h2{letter-spacing:.025em}
+.ap-tag-filter button{position:relative;overflow:hidden}
+.ap-tag-filter button:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,#ffffff55 50%,transparent 80%);transform:translateX(-130%);transition:transform .65s}
+.ap-tag-filter button:hover:after{transform:translateX(130%)}
+.ap-entry-card{position:relative;overflow:hidden}
+.ap-entry-card:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 25%,#ffffff08 48%,transparent 70%);transform:translateX(-120%);transition:transform .9s}
+.ap-entry-card:hover:before{transform:translateX(120%)}
+.ap-post-cover{transition:filter .5s,transform .7s}
+.ap-entry-card:hover .ap-post-cover{filter:saturate(1) contrast(1.04);transform:scale(1.015)}
+.ap-orbit-night .ap-feed-hero:after{border-color:#b9d7e855;box-shadow:0 0 0 25px #b9d7e711,0 0 0 58px #b9d7e70a,0 0 90px #b9d7e722}
+.ap-orbit-night .ap-feed-orbit,.ap-orbit-night .ap-feed-star{color:#b9d7e8}
+.ap-orbit-night .ap-feed-moon{box-shadow:0 0 90px #b9d7e855}
+.ap-secret-hint{position:fixed;right:18px;bottom:18px;z-index:5;color:var(--ap-muted);font:9px var(--ap-mono);letter-spacing:.1em;opacity:.5;transition:opacity .3s;pointer-events:none}
+.ap-secret-hint:hover{opacity:1}
+@media(max-width:700px){.ap-feed-art{position:relative;top:auto;right:auto;width:min(47vw,190px);margin:38px 9% 10px auto}.ap-feed-hero{padding-bottom:65px}.ap-feed-hero:after{right:-12%;top:12%}.ap-feed-art-note{left:-20%}.ap-atmosphere-star{display:none}.ap-secret-hint{right:10px;bottom:10px;font-size:8px}}
+@media(prefers-reduced-motion:reduce){.ap-atmosphere-star{display:none}.ap-feed-art,.ap-shark-frame,.ap-feed-star,.ap-title span,.ap-entry-card,.ap-post-cover{transition:none;animation:none}}
