@@ -1,0 +1,48 @@
+/* APPLE PLANET — page-specific atmosphere and motion; additive layer */
+.page-hero{isolation:isolate}
+.page-hero:before{content:"";position:absolute;z-index:0;inset:0 0 0 auto;width:42%;pointer-events:none;opacity:.28;background:radial-gradient(ellipse at 70% 40%,var(--detail-glow,#a6405040),transparent 65%)}
+.page-hero>*{position:relative;z-index:1}
+.page-hero h1{text-shadow:0 12px 45px #0008}
+.page-hero .breadcrumb{display:flex;align-items:center;gap:9px}
+.page-hero .breadcrumb:after{content:"";display:inline-block;width:38px;height:1px;background:var(--detail-accent,var(--green));opacity:.8}
+.content-section{--section-accent:var(--detail-accent,var(--green));}
+.content-section h2{position:relative;padding-bottom:15px}
+.content-section h2:before{content:"";position:absolute;left:0;bottom:0;width:38px;height:2px;background:var(--section-accent);box-shadow:0 0 16px var(--section-accent)}
+.content-card{overflow:hidden}
+.content-card:after{content:"";position:absolute;right:-34px;top:-40px;width:110px;height:110px;border:1px solid color-mix(in srgb,var(--section-accent) 30%,transparent);border-radius:50%;box-shadow:0 0 0 14px color-mix(in srgb,var(--section-accent) 5%,transparent);pointer-events:none;transition:transform .55s,opacity .55s;opacity:.55}
+.content-card:hover:after{transform:scale(1.35) rotate(25deg);opacity:1}
+.content-card .meta{color:var(--section-accent)}
+.content-card .tags{border-color:color-mix(in srgb,var(--section-accent) 28%,var(--line))}
+.photo-item{position:relative;overflow:hidden}
+.photo-item:before{content:"FRAME / 001";position:absolute;z-index:2;top:17px;left:18px;padding:6px 9px;background:#171512d9;color:#eee7dc;font:8px var(--mono);letter-spacing:.14em}
+.photo-item video,.photo-item img{transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .7s}
+.photo-item:hover video,.photo-item:hover img{transform:scale(1.025);filter:saturate(1) contrast(1.08)}
+.data-panel{position:relative;overflow:hidden}
+.data-panel:after{content:"";position:absolute;width:190px;height:190px;right:-65px;top:-100px;border:1px solid color-mix(in srgb,var(--detail-accent) 35%,transparent);border-radius:50%;box-shadow:0 0 0 18px color-mix(in srgb,var(--detail-accent) 6%,transparent),0 0 0 38px color-mix(in srgb,var(--detail-accent) 4%,transparent);pointer-events:none}
+.data-cell b{font-variant-numeric:tabular-nums;text-shadow:0 0 22px color-mix(in srgb,var(--detail-accent) 25%,transparent)}
+.work-card{position:relative}
+.work-card:after{content:"PERSONAL ARCHIVE  /  KEEP PRIVATE";position:absolute;right:24px;bottom:14px;color:var(--detail-accent);font:8px var(--mono);letter-spacing:.12em;opacity:.65}
+.work-fields div{position:relative;transition:padding-left .25s}
+.work-fields div:hover{padding-left:8px}
+.work-fields dd{line-height:1.7}
+.page-interests .content-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.page-interests .content-card{min-height:260px;display:flex;flex-direction:column}
+.page-interests .content-card .tags{margin-top:auto}
+.page-interests .content-card:nth-child(2){transform:translateY(18px)}
+.page-interests .content-card:nth-child(2):hover{transform:translateY(10px)}
+.page-daily{--detail-accent:#d1ad78;--detail-glow:#c58d4b38}
+.page-daily .page-hero:after{border-color:#d1ad7850}
+.page-daily .content-card:before{background:#d1ad78}
+.page-culture{--detail-accent:#c7797d;--detail-glow:#a6405050}
+.page-culture .content-card:before{background:#c7797d}
+.page-culture .content-card:nth-child(2n){background:linear-gradient(135deg,#2a2020,#191817)}
+.page-fanworks{--detail-accent:#b59acb;--detail-glow:#86649b45}
+.page-fanworks .work-card{background:linear-gradient(125deg,#27212b,#191817 68%)}
+.page-fanworks .work-fields dt{color:#c6a8df}
+.page-interests{--detail-accent:#c8ee70;--detail-glow:#9fca4a35}
+.page-interests .content-card:nth-child(1){transform:rotate(-.4deg)}
+.page-interests .content-card:nth-child(3){transform:rotate(.4deg)}
+.detail-reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.detail-reveal.detail-visible{opacity:1;transform:translateY(0)}
+@media(max-width:760px){.page-interests .content-grid{grid-template-columns:1fr}.page-interests .content-card:nth-child(n){transform:none;min-height:0}.work-card:after{position:static;display:block;margin-top:20px}.page-hero:before{width:75%;opacity:.2}}
+@media(prefers-reduced-motion:reduce){.detail-reveal{opacity:1;transform:none;transition:none}.content-card:after,.photo-item video,.photo-item img{transition:none}}
