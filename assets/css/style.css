@@ -76,3 +76,6 @@ body{background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb,var(--sand) 
 .card-count{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:11px}
 .site-footer{justify-content:center;color:var(--gold);font-family:'Great Vibes',cursive;font-size:23px;letter-spacing:.04em;border-color:var(--gold)}
 @media(max-width:760px){.site-header{min-height:78px}.brand b{font-size:39px}.hero{padding:38px 2% 28px}.collections{padding-top:35px}}
+
+/* Photo wall video entry */
+.video-photo{overflow:hidden;border:1px solid color-mix(in srgb,var(--gold) 42%,var(--line));border-radius:12px;background:var(--surface);box-shadow:0 10px 28px #00000010}.video-photo video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#171717;border-radius:9px}.video-photo figcaption{padding:13px 15px 16px;line-height:1.8}.video-photo figcaption .meta{letter-spacing:.12em;color:var(--gold)}
