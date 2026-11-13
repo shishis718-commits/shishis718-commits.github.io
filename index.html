@@ -42,5 +42,6 @@
 (()=>{const progress=document.getElementById('apScrollProgress');const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.transform='scaleX('+(max>0?scrollY/max:0)+')'};addEventListener('scroll',update,{passive:true});update();const toast=document.getElementById('apToast');const lines=['月亮知道你来过。','鲨鱼说：继续保持奇怪。','你找到了一颗隐藏星星。'];document.querySelector('.brand').addEventListener('click',e=>{if(scrollY<20){e.preventDefault();toast.textContent=lines[Math.floor(Math.random()*lines.length)];toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}});})();
 </script>
 <script src="assets/js/inner-playful.js" defer></script>
+<script src="assets/js/feed-atmosphere.js" defer></script>
 <script src="assets/js/posts.js" defer></script>
 </body></html>
