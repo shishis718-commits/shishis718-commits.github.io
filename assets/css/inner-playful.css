@@ -15,3 +15,15 @@
 .site-header .brand:hover .brand-icon{transform:rotate(18deg) scale(1.1);box-shadow:0 0 0 7px #ffffff0c,0 0 24px var(--detail-accent,var(--green))}
 @media(max-width:700px){.ap-floating-mark{display:none}.ap-orbit-speck{display:none}}
 @media(prefers-reduced-motion:reduce){#ap-reading-progress{transition:none}.ap-orbit-speck,.ap-floating-mark{display:none!important}#ap-secret-toast{transition:none}.site-header .brand-icon,.page-hero h1{transition:none}}
+
+/* Secret night-flight mode + tiny click constellations */
+.ap-floating-mark{appearance:none;border:0;background:transparent;cursor:pointer;pointer-events:auto;z-index:2;padding:8px;transition:opacity .3s,transform .4s}
+.ap-floating-mark:hover{opacity:.42;transform:rotate(-5deg) translateY(-5px)}
+.ap-click-spark{position:fixed;z-index:10001;pointer-events:none;color:var(--detail-accent,var(--green));font:18px var(--serif);text-shadow:0 0 12px currentColor;animation:ap-click-pop .72s ease-out forwards}
+@keyframes ap-click-pop{0%{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(-25deg)}25%{opacity:1}100%{opacity:0;transform:translate(-50%,-145%) scale(1.6) rotate(35deg)}}
+.ap-orbit-mode{--detail-accent:#b9d7e8!important}
+.ap-orbit-mode:before{content:"";position:fixed;inset:0;z-index:9990;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 20%,#06111a55 100%);animation:ap-night-in .6s ease both}
+.ap-orbit-mode .ap-floating-mark{opacity:.48;filter:drop-shadow(0 0 12px #b9d7e8)}
+.ap-orbit-mode .content-card,.ap-orbit-mode .data-panel{box-shadow:0 12px 40px #06111a22}
+@keyframes ap-night-in{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.ap-click-spark{display:none!important}.ap-floating-mark{transition:none}}
