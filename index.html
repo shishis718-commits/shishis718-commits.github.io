@@ -1,15 +1,133 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Apple Planet，个人生活与兴趣档案。"><title>Apple Planet · Personal Archive</title><link rel="stylesheet" href="assets/css/style.css"></head><body>
-<div class="site-shell"><header class="site-header"><a class="brand" href="index.html"><span class="brand-icon apple-brand-icon"><img src="assets/images/apple-icon.svg" alt="" aria-hidden="true"></span><span><b>Apple Planet</b></span></a><nav><a href="daily.html">日常生活</a><a href="culture.html">书影音</a><a href="fanworks.html">同人档案</a><a href="interests.html">兴趣收藏</a></nav><div class="palette-switch" aria-label="选择配色"><button type="button" data-theme="sage" aria-label="鼠尾草绿" title="鼠尾草绿"></button><button type="button" data-theme="rose" aria-label="玫瑰粉" title="玫瑰粉"></button><button type="button" data-theme="night" aria-label="午夜蓝" title="午夜蓝"></button><button type="button" data-theme="cream" aria-label="奶油黄" title="奶油黄"></button></div></header>
-<div class="top-photo"><img src="assets/images/shark.jpg" alt="围着钩针花边的鲨鱼玩偶"></div><main>
-<section class="hero"><div class="hero-copy"><h1>把生活收藏起来，<br><em>把喜欢的留下来。</em></h1></div><div class="hero-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-core">P<span>.</span></div><span class="art-label label-a">NOTES & MEMORIES</span><span class="art-label label-b">A LITTLE UNIVERSE</span><span class="art-star star-a">✳</span><span class="art-star star-b">✦</span></div></section>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Apple Planet — a strange little universe. 生活碎片、故事与私人收藏。">
+<meta name="theme-color" content="#121211">
+<title>Apple Planet — A Strange Little Universe</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/home-editorial.css">
+</head>
+<body>
+<div class="site-shell">
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Apple Planet 首页">
+    <span class="brand-icon apple-brand-icon"><img src="assets/images/apple-icon.svg" alt="" aria-hidden="true"></span>
+    <span><b>Apple Planet</b></span>
+  </a>
+  <button class="ap-menu-button" type="button" id="apOpenMenu" aria-haspopup="dialog" aria-controls="apMenu">OPEN MENU ↗</button>
+</header>
 
-<section class="collections" id="collections"><div class="section-heading"><div><p class="eyebrow">THE COLLECTIONS</p><h2>收藏分类</h2></div></div>
-<div class="collection-grid">
-<a class="collection-card daily-card" href="daily.html"><div class="card-top"><span>01 / EVERYDAY</span><span class="card-arrow">↗</span></div><div class="card-visual visual-daily"><i class="shape shape-sun"></i><i class="shape shape-paper"></i><i class="shape shape-dot"></i></div><div class="card-bottom"><div><h3>日常生活</h3><p>日记、照片、视频与睡眠记录</p></div><span class="card-count">LIFE</span></div></a>
-<a class="collection-card culture-card" href="culture.html"><div class="card-top"><span>02 / CULTURE</span><span class="card-arrow">↗</span></div><div class="card-visual visual-culture"><i class="book book-one"></i><i class="book book-two"></i><i class="book book-three"></i><span>READ<br>WATCH<br>REMEMBER</span></div><div class="card-bottom"><div><h3>书影音</h3><p>读过的书、看过的电影和长篇感想</p></div><span class="card-count">MEDIA</span></div></a>
-<a class="collection-card fan-card" href="fanworks.html"><div class="card-top"><span>03 / FANWORKS</span><span class="card-arrow">↗</span></div><div class="card-visual visual-fan"><div class="fan-frame"><span>FAN<br>ARCHIVE</span><i>✳</i></div><b>stories worth keeping</b></div><div class="card-bottom"><div><h3>同人档案</h3><p>作品、作者、关系、分级与阅读状态</p></div><span class="card-count">AO3 & MORE</span></div></a>
-<a class="collection-card interest-card" href="interests.html"><div class="card-top"><span>04 / INTERESTS</span><span class="card-arrow">↗</span></div><div class="card-visual visual-interest"><span class="interest-word word-one">MUSIC</span><span class="interest-word word-two">GAMES</span><span class="interest-word word-three">FAVES</span><span class="interest-spark">✦</span></div><div class="card-bottom"><div><h3>兴趣收藏</h3><p>角色、音乐、游戏、链接与灵感</p></div><span class="card-count">MY PICKS</span></div></a>
-</div></section>
+<main class="ap-home">
+  <div class="ap-topline">
+    <span>PERSONAL PLANET <strong>●</strong> ISSUE Nº 001</span>
+    <span>EST. 2026 / SOMEWHERE</span>
+  </div>
 
-</main><footer class="site-footer"><span>✦ Apple Planet ✦</span></footer></div><script>(()=>{const root=document.documentElement;const saved=localStorage.getItem('apple-planet-theme')||'sage';root.dataset.theme=saved;document.querySelectorAll('[data-theme]').forEach(b=>{b.classList.toggle('active',b.dataset.theme===saved);b.addEventListener('click',()=>{root.dataset.theme=b.dataset.theme;localStorage.setItem('apple-planet-theme',b.dataset.theme);document.querySelectorAll('[data-theme]').forEach(x=>x.classList.toggle('active',x===b));});});})();</script></body></html>
+  <section class="ap-hero" aria-labelledby="apTitle">
+    <div class="ap-hero-copy">
+      <p class="ap-kicker ap-reveal">WELCOME TO MY LITTLE UNIVERSE — 001</p>
+      <h1 class="ap-title" id="apTitle"><span> A STRANGE</span><span class="ap-title-italic">little world.</span></h1>
+      <p class="ap-intro ap-reveal">一些生活碎片，一些喜欢的故事，<em>还有一些不需要解释的东西。</em></p>
+    </div>
+    <div class="ap-hero-art" id="apParallax">
+      <div class="ap-orbit"></div><div class="ap-orbit two"></div>
+      <div class="ap-moon" aria-hidden="true"></div>
+      <span class="ap-sticker ap-sticker-star" aria-hidden="true">✳</span>
+      <figure class="ap-shark-frame" data-parallax="0.035">
+        <img src="assets/images/shark.jpg" alt="苹果星球的鲨鱼玩偶">
+        <figcaption>THE RESIDENT / 001</figcaption>
+      </figure>
+      <div class="ap-sticker ap-sticker-note"><span>stay<br>weird.<small>YOU ARE HOME</small></span></div>
+      <span class="ap-side-note">NOTHING IS ORDINARY · NOTHING IS ORDINARY</span>
+    </div>
+    <span class="ap-index">SCROLL TO EXPLORE ↓　/　01—05</span>
+  </section>
+
+  <div class="ap-marquee" aria-label="A little world of my own">
+    <div class="ap-marquee-track" aria-hidden="true">
+      <span>A LITTLE WORLD OF MY OWN</span><b>✳</b><span>COLLECT THE UNUSUAL</span><b>✳</b><span>STAY CURIOUS, STAY WEIRD</span><b>✳</b>
+      <span>A LITTLE WORLD OF MY OWN</span><b>✳</b><span>COLLECT THE UNUSUAL</span><b>✳</b><span>STAY CURIOUS, STAY WEIRD</span><b>✳</b>
+    </div>
+  </div>
+
+  <section class="ap-manifesto ap-reveal">
+    <div class="ap-manifesto-label">A NOTE FROM THIS PLANET<br>— 001 / 2026</div>
+    <div>
+      <h2>Not everything needs a reason.<br>Some things are here simply because <em>I like them.</em></h2>
+      <p>这里没有固定主题，也没有必须完成的清单。照片、电影、故事、奇怪的小收藏——想到什么，就把它留在这里。</p>
+    </div>
+  </section>
+
+  <section class="ap-collage ap-reveal" aria-label="A strange little collage">
+    <div class="ap-collage-word">COLLECT<br><span>the</span> UNUSUAL.</div>
+    <div class="ap-collage-orb" aria-hidden="true"></div>
+    <div class="ap-collage-caption">ODD THINGS / SOFT MEMORIES / RANDOM THOUGHTS</div>
+    <div class="ap-collage-tag">THIS IS MY PLANET ↗</div>
+  </section>
+
+  <footer class="ap-footer">
+    <span>© 2026 APPLE PLANET · MADE OF SMALL THINGS</span>
+    <button type="button" id="apSecret">DON'T CLICK THE APPLE ✳</button>
+    <span>THANKS FOR VISITING MY PLANET.</span>
+  </footer>
+</main>
+</div>
+
+<div class="ap-overlay" id="apMenu" role="dialog" aria-modal="true" aria-labelledby="apMenuTitle" aria-hidden="true">
+  <div class="ap-overlay-inner">
+    <button class="ap-overlay-close" id="apCloseMenu" type="button">CLOSE ×</button>
+    <div class="ap-overlay-kicker">CHOOSE YOUR DESTINATION / 01—04</div>
+    <h2 id="apMenuTitle">Explore the planet.</h2>
+    <nav class="ap-menu-links" aria-label="苹果星球分类">
+      <a href="daily.html"><small>01 / EVERYDAY</small><strong>日常生活</strong><span>Photos, notes & little moments</span></a>
+      <a href="culture.html"><small>02 / CULTURE</small><strong>书影音</strong><span>Books, films & stories</span></a>
+      <a href="fanworks.html"><small>03 / FAN ARCHIVE</small><strong>同人档案</strong><span>Fictional worlds worth keeping</span></a>
+      <a href="interests.html"><small>04 / COLLECTIONS</small><strong>兴趣收藏</strong><span>Things I cannot throw away</span></a>
+    </nav>
+  </div>
+</div>
+<div class="ap-toast" id="apToast" role="status" aria-live="polite"></div>
+
+<script>
+(()=> {
+  const menu=document.getElementById('apMenu');
+  const open=document.getElementById('apOpenMenu');
+  const close=document.getElementById('apCloseMenu');
+  const toast=document.getElementById('apToast');
+  const showMenu=()=>{menu.classList.add('is-open');menu.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';close.focus();};
+  const hideMenu=()=>{menu.classList.remove('is-open');menu.setAttribute('aria-hidden','true');document.body.style.overflow='';open.focus();};
+  open.addEventListener('click',showMenu);
+  close.addEventListener('click',hideMenu);
+  menu.addEventListener('click',e=>{if(e.target===menu)hideMenu();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('is-open'))hideMenu();});
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduced){
+    const targets=[...document.querySelectorAll('.ap-reveal')];
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.14});
+    targets.forEach(el=>observer.observe(el));
+    const art=document.getElementById('apParallax');
+    if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+      art.addEventListener('pointermove',e=>{
+        const r=art.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+        const frame=art.querySelector('.ap-shark-frame');
+        frame.style.translate=(x*15)+'px '+(y*12)+'px';
+      });
+      art.addEventListener('pointerleave',()=>{art.querySelector('.ap-shark-frame').style.translate='0 0';});
+    }
+  }else{
+    document.querySelectorAll('.ap-reveal').forEach(el=>el.classList.add('is-visible'));
+  }
+  const messages=['You found a secret.','The shark is watching you.','Nothing happens. Or does it?','Have a strange day. ✳','Welcome back, tiny human.'];
+  let last=-1;
+  document.getElementById('apSecret').addEventListener('click',()=>{
+    let n;do{n=Math.floor(Math.random()*messages.length)}while(n===last);last=n;
+    toast.textContent=messages[n];toast.classList.add('show');
+    window.clearTimeout(window.apToastTimer);
+    window.apToastTimer=window.setTimeout(()=>toast.classList.remove('show'),2600);
+  });
+})();
+</script>
+</body>
+</html>
