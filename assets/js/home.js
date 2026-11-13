@@ -1,0 +1,1 @@
+(function(){const track=document.getElementById('message-track');const button=document.getElementById('pause-messages');if(!track||!button)return;button.addEventListener('click',()=>{const paused=track.classList.toggle('is-paused');button.setAttribute('aria-pressed',String(paused));button.textContent=paused?'继续滚动':'暂停滚动'});})();
