@@ -1,176 +1,43 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Apple Planet — a strange little universe. 生活碎片、故事与私人收藏。">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Apple Planet — 一个按时间收藏生活、故事与灵感的小小星球。">
 <meta name="theme-color" content="#121211">
 <title>Apple Planet — A Strange Little Universe</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/home-editorial.css">
+<link rel="stylesheet" href="assets/css/posts.css">
 </head>
 <body>
 <div class="site-shell">
-<header class="site-header">
-  <a class="brand" href="index.html" aria-label="Apple Planet 首页">
-    <span class="brand-icon apple-brand-icon"><img src="assets/images/apple-icon.svg" alt="" aria-hidden="true"></span>
-    <span><b>Apple Planet</b></span>
-  </a>
-  <button class="ap-menu-button" type="button" id="apOpenMenu" aria-haspopup="dialog" aria-controls="apMenu">OPEN MENU ↗</button>
+<header class="site-header ap-feed-header">
+  <a class="brand" href="index.html" aria-label="Apple Planet 首页"><span class="brand-icon apple-brand-icon"><img src="assets/images/apple-icon.svg" alt="" aria-hidden="true"></span><span><b>Apple Planet</b></span></a>
+  <span class="ap-header-note">A PERSONAL PLANET / EST. 2026</span>
 </header>
-
-<main class="ap-home">
+<main class="ap-home ap-feed-home">
   <div class="ap-scroll-progress" id="apScrollProgress" aria-hidden="true"></div>
-  <div class="ap-topline">
-    <span>PERSONAL PLANET <strong>●</strong> ISSUE Nº 001</span>
-    <span>EST. 2026 / SOMEWHERE</span>
-  </div>
-
-  <section class="ap-hero" aria-labelledby="apTitle">
-    <div class="ap-hero-copy">
-      <p class="ap-kicker ap-reveal">WELCOME TO MY LITTLE UNIVERSE — 001</p>
-      <h1 class="ap-title" id="apTitle"><span> A STRANGE</span><span class="ap-title-italic">little world.</span></h1>
-      <p class="ap-intro ap-reveal">一些生活碎片，一些喜欢的故事，<em>还有一些不需要解释的东西。</em></p>
-    </div>
-    <div class="ap-hero-art" id="apParallax">
-      <div class="ap-orbit"></div><div class="ap-orbit two"></div>
-      <div class="ap-moon" aria-hidden="true"></div>
-      <span class="ap-sticker ap-sticker-star" aria-hidden="true">✳</span>
-      <figure class="ap-shark-frame" data-parallax="0.035">
-        <img src="assets/images/shark.jpg" alt="苹果星球的鲨鱼玩偶">
-        <figcaption>THE RESIDENT / 001</figcaption>
-      </figure>
-      <div class="ap-sticker ap-sticker-note"><span>stay<br>weird.<small>YOU ARE HOME</small></span></div>
-      <span class="ap-side-note">NOTHING IS ORDINARY · NOTHING IS ORDINARY</span>
-    </div>
-    <span class="ap-index">SCROLL TO EXPLORE ↓　/　01—05</span>
+  <section class="ap-feed-hero">
+    <p class="ap-kicker">WELCOME TO MY LITTLE UNIVERSE</p>
+    <h1 class="ap-title"><span>A STRANGE</span><span class="ap-title-italic">little world.</span></h1>
+    <p class="ap-intro">生活、阅读、电影、灵感，还有偶然路过的念头。<em>想到什么，就在这里留下什么。</em></p>
+    <div class="ap-feed-orbit" aria-hidden="true">✳</div>
+    <span class="ap-feed-scroll">SCROLL TO WANDER ↓</span>
   </section>
-
-  <div class="ap-marquee" aria-label="A little world of my own">
-    <div class="ap-marquee-track" aria-hidden="true">
-      <span>A LITTLE WORLD OF MY OWN</span><b>✳</b><span>COLLECT THE UNUSUAL</span><b>✳</b><span>STAY CURIOUS, STAY WEIRD</span><b>✳</b>
-      <span>A LITTLE WORLD OF MY OWN</span><b>✳</b><span>COLLECT THE UNUSUAL</span><b>✳</b><span>STAY CURIOUS, STAY WEIRD</span><b>✳</b>
-    </div>
-  </div>
-
-  <section class="ap-manifesto ap-reveal">
-    <div class="ap-manifesto-label">A NOTE FROM THIS PLANET<br>— 001 / 2026</div>
-    <div>
-      <h2>Not everything needs a reason.<br>Some things are here simply because <em>I like them.</em></h2>
-      <p>这里没有固定主题，也没有必须完成的清单。照片、电影、故事、奇怪的小收藏——想到什么，就把它留在这里。</p>
+  <section class="ap-timeline-section" aria-label="星球时间轴">
+    <div class="ap-timeline-heading"><div><span class="ap-kicker">THE PLANET LOG / CHRONOLOGICAL ARCHIVE</span><h2>最近留下的痕迹</h2></div><span class="ap-sort-note">NEWEST FIRST ↓</span></div>
+    <div id="ap-published-posts" class="ap-published-posts" aria-live="polite">
+      <div class="ap-posts-heading"><span class="meta">LOADING THE PLANET…</span><span class="ap-posts-count"></span></div>
+      <nav class="ap-tag-filter" aria-label="按标签筛选" hidden></nav>
+      <div class="ap-posts-list"></div>
     </div>
   </section>
-
-  <section class="ap-collage ap-reveal" aria-label="A strange little collage">
-    <div class="ap-collage-word">COLLECT<br><span>the</span> UNUSUAL.</div>
-    <div class="ap-collage-orb" aria-hidden="true"></div>
-    <nav class="ap-orbit-links" aria-label="Explore four collections">
-      <a class="ap-portal portal-life" href="daily.html"><small>01 / EVERYDAY</small><span>日常生活</span><i>↗</i></a>
-      <a class="ap-portal portal-culture" href="culture.html"><small>02 / CULTURE</small><span>书影音</span><i>↗</i></a>
-      <a class="ap-portal portal-fan" href="fanworks.html"><small>03 / FAN ARCHIVE</small><span>同人档案</span><i>↗</i></a>
-      <a class="ap-portal portal-interest" href="interests.html"><small>04 / COLLECTIONS</small><span>兴趣收藏</span><i>↗</i></a>
-    </nav>
-    <div class="ap-collage-caption">ODD THINGS / SOFT MEMORIES / RANDOM THOUGHTS</div>
-    <div class="ap-collage-tag">WANDER A LITTLE ↗</div>
-  </section>
-
-  <footer class="ap-footer">
-    <span>© 2026 APPLE PLANET · MADE OF SMALL THINGS</span>
-    <button type="button" id="apSecret">DON'T CLICK THE APPLE ✳</button>
-    <span>THANKS FOR VISITING MY PLANET.</span>
-  </footer>
+  <footer class="ap-footer"><span>© 2026 APPLE PLANET · MADE OF SMALL THINGS</span><span>NO CATEGORIES, JUST LITTLE TRACES.</span><span>THANKS FOR WANDERING.</span></footer>
 </main>
 </div>
-
-<div class="ap-overlay" id="apMenu" role="dialog" aria-modal="true" aria-labelledby="apMenuTitle" aria-hidden="true">
-  <div class="ap-overlay-inner">
-    <button class="ap-overlay-close" id="apCloseMenu" type="button">CLOSE ×</button>
-    <div class="ap-overlay-kicker">CHOOSE YOUR DESTINATION / 01—04</div>
-    <h2 id="apMenuTitle">Explore the planet.</h2>
-    <nav class="ap-menu-links" aria-label="苹果星球分类">
-      <a href="daily.html"><small>01 / EVERYDAY</small><strong>日常生活</strong><span>Photos, notes & little moments</span></a>
-      <a href="culture.html"><small>02 / CULTURE</small><strong>书影音</strong><span>Books, films & stories</span></a>
-      <a href="fanworks.html"><small>03 / FAN ARCHIVE</small><strong>同人档案</strong><span>Fictional worlds worth keeping</span></a>
-      <a href="interests.html"><small>04 / COLLECTIONS</small><strong>兴趣收藏</strong><span>Things I cannot throw away</span></a>
-    </nav>
-  </div>
-</div>
 <div class="ap-toast" id="apToast" role="status" aria-live="polite"></div>
-
 <script>
-(()=> {
-  const menu=document.getElementById('apMenu');
-  const open=document.getElementById('apOpenMenu');
-  const close=document.getElementById('apCloseMenu');
-  const toast=document.getElementById('apToast');
-  const progress=document.getElementById('apScrollProgress');
-  const showMenu=()=>{menu.classList.add('is-open');menu.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';close.focus();};
-  const hideMenu=()=>{menu.classList.remove('is-open');menu.setAttribute('aria-hidden','true');document.body.style.overflow='';open.focus();};
-  open.addEventListener('click',showMenu);
-  close.addEventListener('click',hideMenu);
-  menu.addEventListener('click',e=>{if(e.target===menu)hideMenu();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('is-open'))hideMenu();});
-  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!reduced){
-    const updateProgress=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.transform='scaleX('+(max>0?window.scrollY/max:0)+')';};
-    window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();
-    const targets=[...document.querySelectorAll('.ap-reveal')];
-    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.14});
-    targets.forEach(el=>observer.observe(el));
-    const art=document.getElementById('apParallax');
-    const collage=document.querySelector('.ap-collage');
-    collage.addEventListener('pointermove',e=>{const r=collage.getBoundingClientRect();collage.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');collage.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});
-    if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
-      art.addEventListener('pointermove',e=>{
-        const r=art.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-        const frame=art.querySelector('.ap-shark-frame');
-        frame.style.translate=(x*15)+'px '+(y*12)+'px';
-      });
-      art.addEventListener('pointerleave',()=>{art.querySelector('.ap-shark-frame').style.translate='0 0';});
-    }
-  }else{
-    document.querySelectorAll('.ap-reveal').forEach(el=>el.classList.add('is-visible'));
-    progress.style.transform='scaleX(0)';
-  }
-  const messages=['You found a secret.','The shark is watching you.','Nothing happens. Or does it?','Have a strange day. ✳','Welcome back, tiny human.'];
-  let last=-1;
-  document.getElementById('apSecret').addEventListener('click',()=>{
-    let n;do{n=Math.floor(Math.random()*messages.length)}while(n===last);last=n;
-    toast.textContent=messages[n];toast.classList.add('show');
-    window.clearTimeout(window.apToastTimer);
-    window.apToastTimer=window.setTimeout(()=>toast.classList.remove('show'),2600);
-  });
-})();
+(()=>{const progress=document.getElementById('apScrollProgress');const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.transform='scaleX('+(max>0?scrollY/max:0)+')'};addEventListener('scroll',update,{passive:true});update();const toast=document.getElementById('apToast');const lines=['月亮知道你来过。','鲨鱼说：继续保持奇怪。','你找到了一颗隐藏星星。'];document.querySelector('.brand').addEventListener('click',e=>{if(scrollY<20){e.preventDefault();toast.textContent=lines[Math.floor(Math.random()*lines.length)];toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}});})();
 </script>
-
-<script>
-(()=> {
-  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const toast=document.getElementById('apToast');
-  const secretMessages=['月亮知道你来过。','鲨鱼说：今天也要保持奇怪。','你找到了一颗隐藏星星。','这里没有任务，只有一点点宇宙。','P.S. 你是第一个发现这个的人吗？'];
-  let moonCount=0,moonTimer,typed='';
-  const moon=document.querySelector('.ap-moon');
-  const show=(message)=>{toast.textContent=message;toast.classList.add('show');clearTimeout(window.apToastTimer);window.apToastTimer=setTimeout(()=>toast.classList.remove('show'),3000)};
-  moon?.addEventListener('click',()=>{moonCount++;clearTimeout(moonTimer);moonTimer=setTimeout(()=>moonCount=0,2200);if(moonCount>=3){moonCount=0;document.body.classList.toggle('ap-moon-awake');show('月亮醒了。✳ '+secretMessages[Math.floor(Math.random()*secretMessages.length)])}});
-  document.addEventListener('keydown',e=>{if(e.key.length===1&&!e.ctrlKey&&!e.metaKey&&!e.altKey){typed=(typed+e.key.toLowerCase()).slice(-5);if(typed.endsWith('orbit')){typed='';document.body.classList.toggle('ap-moon-awake');show(document.body.classList.contains('ap-moon-awake')?'秘密轨道已开启。':'秘密轨道已关闭。')}}});
-  if(!reduced&&window.matchMedia('(pointer:fine)').matches){
-    let last=0;document.addEventListener('pointermove',e=>{const now=performance.now();if(now-last<150)return;last=now;const dot=document.createElement('i');dot.className='ap-home-dust';dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';document.body.appendChild(dot);setTimeout(()=>dot.remove(),800)},{passive:true});
-  }
-  const portals=[...document.querySelectorAll('.ap-portal')];
-  portals.forEach((portal,i)=>portal.addEventListener('mouseenter',()=>{if(!reduced)portal.style.setProperty('--portal-tilt',(i%2?'-1':'1')+'deg')}));
-  portals.forEach(portal=>portal.addEventListener('mouseleave',()=>portal.style.removeProperty('--portal-tilt')));
-})();
-</script>
-<style>
-.ap-moon{cursor:pointer;transition:filter .5s,transform .7s}
-.ap-moon:hover{filter:drop-shadow(0 0 20px #d6d0a8);transform:scale(1.06)}
-.ap-moon-awake .ap-moon{filter:drop-shadow(0 0 30px #d6d0a8) brightness(1.3);transform:scale(1.12)}
-.ap-moon-awake .ap-orbit{animation-duration:12s}
-.ap-home-dust{position:fixed;z-index:9998;pointer-events:none;width:3px;height:3px;border-radius:50%;background:#d8dfaa;box-shadow:0 0 10px #d8dfaa;animation:ap-home-dust .8s ease-out forwards}
-@keyframes ap-home-dust{to{opacity:0;transform:translate(8px,-14px) scale(0)}}
-.ap-portal{transition:transform .35s,border-color .35s}
-.ap-portal:hover{transform:translateY(-4px) rotate(var(--portal-tilt,0deg))}
-@media(prefers-reduced-motion:reduce){.ap-home-dust{display:none!important}.ap-moon{transition:none}}
-</style>
-</body>
-</html>
+<script src="assets/js/posts.js" defer></script>
+</body></html>
