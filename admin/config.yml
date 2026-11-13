@@ -27,9 +27,7 @@ collections:
             summary: "{{fields.date}} · {{fields.title}}"
             collapsed: true
             fields:
-              - label: "标题"
-                name: "title"
-                widget: "string"
+              - { label: "标题", name: "title", widget: "string" }
               - label: "标签"
                 name: "tags"
                 widget: "list"
@@ -41,14 +39,9 @@ collections:
                 format: "YYYY-MM-DD"
                 date_format: "YYYY-MM-DD"
                 time_format: false
-              - label: "简短摘要"
-                name: "excerpt"
-                widget: "text"
-                required: false
-              - label: "封面图片"
-                name: "cover"
-                widget: "image"
-                required: false
+              - { label: "简短摘要", name: "excerpt", widget: "text", required: false }
+              - { label: "封面图片", name: "cover", widget: "image", required: false }
+              - { label: "下载链接", name: "download", widget: "string", required: false }
               - label: "正文"
                 name: "body"
                 widget: "markdown"
