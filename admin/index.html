@@ -14,8 +14,11 @@
     h1{font-size:clamp(30px,6vw,54px);font-weight:400;margin:22px 0 8px}p{color:#b8b0a3;line-height:1.8}
     .note{max-width:980px;margin:20px auto 0;padding:0 24px;font:12px/1.8 monospace;color:#c7d49b}
     #nc-root{max-width:980px;margin:0 auto;padding:16px 24px 60px}
+    .setup{max-width:760px;margin:8px auto;padding:clamp(22px,4vw,38px);border:1px solid #ffffff22;background:#ffffff06}
+    .setup h2{font-weight:400;font-size:25px}.setup ol{padding-left:22px;color:#ddd3c5;line-height:2}
+    .setup li{padding-left:5px;margin:8px 0}.setup a{overflow-wrap:anywhere}
+    .setup .hint{padding:12px 15px;border-left:2px solid #c7d49b;background:#ffffff08;font:12px/1.8 monospace;color:#c7d49b}
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
   <header>
@@ -24,6 +27,24 @@
     <p>把脑海里的东西放进来。写完、配图、选择分类，然后发布到你的星球。</p>
   </header>
   <div class="note">PRIVATE EDITORIAL DESK / 仅限获授权的账号登录</div>
-  <div id="nc-root"></div>
+  <div id="nc-root" aria-live="polite">正在检查写作后台……</div>
+  <script>
+  (async()=>{
+    const root=document.getElementById('nc-root');
+    try{
+      const response=await fetch('./config.yml',{cache:'no-store'});
+      if(!response.ok)throw new Error('无法读取后台配置');
+      const config=await response.text();
+      if(config.includes('REPLACE_WITH_DECAP_TURBO_SITE_ID')){
+        root.innerHTML='<section class="setup"><p class="brand">ONE-TIME CONNECTION / 01</p><h2>还差一次授权，就能开始写作。</h2><p>苹果星球的编辑器和文章分类已经搭好。为了让只有你能发布内容，需要把这个网站连接到 Decap Turbo 的 GitHub 授权服务。</p><ol><li>打开 <a href="https://decapcms.org/turbo/" target="_blank" rel="noopener">Decap Turbo</a>，用 GitHub 账号注册免费账户（免费方案包含 1 个网站和 1 个编辑席位）。</li><li>在 Git connection 中连接 GitHub，并安装 Decap Turbo GitHub App；授权时选择仓库 <code>shishis718-commits/shishis718-commits.github.io</code>。</li><li>创建一个 Site，填写仓库 <code>shishis718-commits/shishis718-commits.github.io</code>、分支 <code>main</code>、Config path <code>admin/config.yml</code>。</li><li>Admin interface URL 填写 <code>https://shishis718-commits.github.io/admin/</code>。</li><li>创建完成后复制 Overview 页面里的 <strong>Site ID</strong>，发给我。我会把它填入配置并完成最后验证。</li></ol><p class="hint">只需要提供 Site ID，不要把密码、Personal Access Token 或 Client Secret 发给我。</p><p><a href="../index.html">← 回到 Apple Planet</a></p></section>';
+        return;
+      }
+      const script=document.createElement('script');
+      script.src='https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js';
+      script.onerror=()=>{root.textContent='编辑器加载失败，请稍后刷新页面。'};
+      document.head.appendChild(script);
+    }catch(error){root.textContent='后台配置暂时无法读取。请稍后刷新页面。';}
+  })();
+  </script>
 </body>
 </html>
