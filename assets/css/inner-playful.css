@@ -1,0 +1,17 @@
+/* APPLE PLANET — playful motion & hidden details */
+#ap-reading-progress{position:fixed;z-index:9999;left:0;top:0;height:2px;width:0;background:var(--detail-accent,var(--green));box-shadow:0 0 12px var(--detail-accent,var(--green));pointer-events:none;transition:width .08s linear}
+.ap-orbit-speck{position:fixed;z-index:9998;pointer-events:none;width:5px;height:5px;border-radius:50%;background:var(--detail-accent,var(--green));box-shadow:0 0 12px var(--detail-accent,var(--green));animation:ap-speck 850ms ease-out forwards}
+@keyframes ap-speck{0%{opacity:0;transform:translate(0,0) scale(.4)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(0)}}
+#ap-secret-toast{position:fixed;z-index:10000;left:50%;bottom:26px;transform:translate(-50%,18px);opacity:0;pointer-events:none;padding:13px 19px;border:1px solid var(--detail-accent,var(--green));background:#171512ed;color:#eee7dc;box-shadow:0 12px 40px #0009;text-align:center;font:11px/1.7 var(--mono);letter-spacing:.05em;max-width:min(88vw,420px);transition:opacity .35s,transform .35s}
+#ap-secret-toast.is-visible{opacity:1;transform:translate(-50%,0)}
+.ap-egg-glow{animation:ap-egg-glow 1.4s ease-in-out 2}
+@keyframes ap-egg-glow{50%{filter:drop-shadow(0 0 18px var(--detail-accent,var(--green))) }}
+.ap-floating-mark{position:fixed;z-index:0;right:3vw;bottom:8vh;color:var(--detail-accent,var(--green));font:italic 18px var(--serif);opacity:.11;pointer-events:none;transform:rotate(-12deg);animation:ap-mark-drift 9s ease-in-out infinite}
+@keyframes ap-mark-drift{50%{transform:translateY(-18px) rotate(-7deg)}}
+.page-hero h1{transition:letter-spacing .4s,color .4s}
+.page-hero h1:hover{letter-spacing:-.045em;color:var(--detail-accent,var(--green))}
+.content-card,.photo-item,.data-panel{transform-origin:center;will-change:transform}
+.site-header .brand-icon{transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.site-header .brand:hover .brand-icon{transform:rotate(18deg) scale(1.1);box-shadow:0 0 0 7px #ffffff0c,0 0 24px var(--detail-accent,var(--green))}
+@media(max-width:700px){.ap-floating-mark{display:none}.ap-orbit-speck{display:none}}
+@media(prefers-reduced-motion:reduce){#ap-reading-progress{transition:none}.ap-orbit-speck,.ap-floating-mark{display:none!important}#ap-secret-toast{transition:none}.site-header .brand-icon,.page-hero h1{transition:none}}
