@@ -30,3 +30,14 @@
 .page-interests .interest-discovery{padding:18px 22px;margin:0 0 22px;background:linear-gradient(110deg,#25271d,#191817 75%)}
 .page-interests .interest-discovery h3{font-size:20px}
 @media(max-width:700px){.daily-inline-tools{grid-template-columns:1fr}.page-interests .interest-discovery{padding:18px}}
+
+/* A tiny dated keepsake tucked beneath each daily video */
+.moon-postmark{margin-top:14px}
+.postmark-button{border:1px solid var(--line);background:#ffffff08;color:var(--detail-accent,var(--green));padding:9px 13px;font:10px var(--mono);letter-spacing:.04em;cursor:pointer;transition:background .25s,border-color .25s}
+.postmark-button:hover,.postmark-button[aria-pressed=true]{border-color:var(--detail-accent,var(--green));background:#ffffff10}
+.postmark-result{display:grid;gap:5px;max-height:0;opacity:0;overflow:hidden;margin-top:0;padding:0 13px;border-left:1px solid var(--detail-accent,var(--green));transition:max-height .45s ease,opacity .35s,margin .35s,padding .35s}
+.postmark-result.is-stamped{max-height:150px;opacity:1;margin-top:12px;padding:9px 13px}
+.postmark-stamp{font:9px var(--mono);letter-spacing:.16em;color:var(--detail-accent,var(--green))}
+.postmark-date{font:10px var(--mono);color:var(--muted)}
+.postmark-note{font:italic 15px/1.7 var(--serif);color:var(--text)}
+@media(prefers-reduced-motion:reduce){.postmark-button,.postmark-result{transition:none}}
