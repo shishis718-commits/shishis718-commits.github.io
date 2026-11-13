@@ -1,23 +1,22 @@
 # 纸上星球｜个人博客
 
-这是「纸上星球」个人博客的 GitHub Pages 部署仓库。
+「纸上星球」是一个用来收藏生活、书影音、同人作品、长篇随笔与兴趣爱好的个人档案馆。
 
-博客源码完整保存在 `paper-planet-blog.tar.gz` 中，包含首页、生活手记、书影音、同人档案、长篇随笔、兴趣收藏、关于页、示例文章、配色主题、站内搜索和写作模板。
-
-## 首次启用网站
+## 启用网站
 
 1. 打开仓库的 **Settings → Pages**。
 2. 在 **Build and deployment** 中，将 **Source** 设为 **GitHub Actions**。
-3. 回到 **Actions**，确认 **Deploy GitHub Pages** 工作流开始运行。
-4. 工作流成功后，网站地址为：<https://shishis718-commits.github.io/>
+3. 回到 **Actions**，查看 **Deploy GitHub Pages** 工作流。首次发布成功后，网站地址是 <https://shishis718-commits.github.io/>。
 
-## 本地预览与修改
+## 修改内容
 
-1. 下载仓库中的 `paper-planet-blog.tar.gz` 并解压。
-2. 打开解压目录里的 `preview.html`，可在浏览器中预览视觉样式。
-3. 修改文章、页面或样式后，重新打包目录内容（保持 `index.html` 位于压缩包根目录），用新压缩包替换仓库里的 `paper-planet-blog.tar.gz`。
-4. 提交后，GitHub Actions 会自动重新部署网站。
+- 首页和各个收藏分类的示例内容都在根目录的 index.html 中。
+- 页面配色、字体、间距和手机适配在 assets/css/style.css 中。
+- 主题切换逻辑在 assets/js/theme.js 中。
+- 页面搜索逻辑在 assets/js/search.js 中。
 
-博客文章使用 Jekyll 的 `_posts` 目录与 Markdown 格式。建议文章文件名采用 `YYYY-MM-DD-title.md`。
+直接编辑对应文件并提交到 main 分支，GitHub Actions 就会重新部署。
 
-> 注意：这是公开仓库。不要上传密码、真实住址、证件信息或私人聊天。GitHub Pages 发布的网站也会公开供互联网访问。
+## 关于公开内容
+
+这是公开仓库，GitHub Pages 发布的网站也会公开供互联网访问。不要上传密码、真实住址、证件信息、私人聊天或其他不想公开的内容。
