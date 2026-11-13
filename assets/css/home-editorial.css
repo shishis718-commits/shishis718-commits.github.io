@@ -121,3 +121,78 @@ body:has(.ap-home) .top-photo{display:none}
  .ap-home *, .ap-home *:before,.ap-home *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
  .ap-reveal{opacity:1;transform:none}
 }
+
+
+/* Integrated collection portals + richer motion pass */
+.ap-scroll-progress{position:fixed;z-index:1200;left:0;top:0;width:100%;height:2px;background:var(--ap-lime);transform:scaleX(0);transform-origin:left center;box-shadow:0 0 12px #c8ee7088;pointer-events:none}
+.ap-title span:first-child{animation:ap-title-in 1.05s cubic-bezier(.2,.8,.2,1) both}
+.ap-title .ap-title-italic{animation:ap-title-in 1.15s .18s cubic-bezier(.2,.8,.2,1) both}
+.ap-kicker{animation:ap-fade-in .8s .15s both}
+.ap-intro{animation:ap-fade-in 1s .55s both}
+.ap-hero-art:after{content:"";position:absolute;inset:4%;border:1px dashed #eee7dc1c;border-radius:50%;animation:ap-spin 75s linear infinite;pointer-events:none}
+.ap-moon{animation:ap-float 7s ease-in-out infinite,ap-moon-glow 5s ease-in-out infinite}
+.ap-shark-frame{will-change:transform,translate}
+.ap-marquee:hover .ap-marquee-track{animation-play-state:paused}
+.ap-manifesto h2{transition:letter-spacing .5s}
+.ap-manifesto:hover h2{letter-spacing:-.015em}
+.ap-collage{--mx:50%;--my:50%;isolation:isolate;transition:border-color .5s}
+.ap-collage:after{content:"";position:absolute;z-index:-0;inset:0;pointer-events:none;background:radial-gradient(280px circle at var(--mx) var(--my),#c8ee7010,transparent 72%);transition:background .15s}
+.ap-collage-orb{animation:ap-float 8s ease-in-out infinite,ap-orb-pulse 6s ease-in-out infinite;transition:transform .6s}
+.ap-collage:hover .ap-collage-orb{transform:scale(1.08) rotate(12deg)}
+.ap-collage-word{z-index:1;pointer-events:none}
+.ap-collage-caption,.ap-collage-tag{z-index:3}
+.ap-orbit-links{position:absolute;z-index:4;inset:0;pointer-events:none}
+.ap-portal{position:absolute;display:flex;align-items:center;gap:9px;padding:9px 12px;color:var(--ap-paper);text-decoration:none;border-bottom:1px solid #eee7dc45;background:#171615b8;backdrop-filter:blur(7px);pointer-events:auto;transition:color .3s,border-color .3s,transform .45s cubic-bezier(.2,.8,.2,1),background .3s}
+.ap-portal small{font:8px var(--ap-mono);letter-spacing:.12em;color:#a69c90;white-space:nowrap}
+.ap-portal span{font:italic 600 16px var(--ap-serif);white-space:nowrap}
+.ap-portal i{font:normal 12px var(--ap-mono);color:var(--ap-lime);font-style:normal}
+.ap-portal:hover{color:var(--ap-lime);border-color:var(--ap-lime);background:#25231f;transform:translateY(-5px) rotate(-2deg) scale(1.04)}
+.portal-life{left:47%;top:9%;transform:rotate(3deg);animation:ap-portal-drift 7s ease-in-out infinite}
+.portal-culture{right:6%;top:48%;transform:rotate(-4deg);animation:ap-portal-drift 8s 1s ease-in-out infinite}
+.portal-fan{left:35%;bottom:17%;transform:rotate(2deg);animation:ap-portal-drift 9s .5s ease-in-out infinite}
+.portal-interest{left:6%;top:52%;transform:rotate(-3deg);animation:ap-portal-drift 7.5s 1.4s ease-in-out infinite}
+.ap-portal:hover{animation-play-state:paused}
+.ap-collage-tag{transition:transform .4s,background .4s}
+.ap-collage:hover .ap-collage-tag{transform:rotate(0) translateY(-4px);background:#b34a5a}
+.ap-reveal.is-visible .ap-portal{animation-play-state:running}
+.ap-overlay-inner{transform:translateY(22px) scale(.98);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.ap-overlay.is-open .ap-overlay-inner{transform:translateY(0) scale(1)}
+.ap-menu-links a{position:relative;overflow:hidden}
+.ap-menu-links a:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,#c8ee7010 50%,transparent 75%);transform:translateX(-120%);transition:transform .7s}
+.ap-menu-links a:hover:after{transform:translateX(120%)}
+.ap-footer button{transition:transform .3s,color .3s}
+.ap-footer button:hover{color:#fff;transform:rotate(-5deg) scale(1.06)}
+@keyframes ap-title-in{from{opacity:0;transform:translateY(45px) skewY(5deg);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:translateY(0) skewY(0);clip-path:inset(0 0 0 0)}}
+@keyframes ap-fade-in{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
+@keyframes ap-moon-glow{0%,100%{box-shadow:0 0 45px #e4d5b322}50%{box-shadow:0 0 85px #e4d5b366}}
+@keyframes ap-orb-pulse{0%,100%{filter:saturate(.85);box-shadow:0 0 50px #a6405022}50%{filter:saturate(1.25);box-shadow:0 0 90px #a6405055}}
+@keyframes ap-portal-drift{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@media(max-width:760px){
+ .ap-collage{min-height:430px}
+ .ap-portal{gap:5px;padding:8px 9px}
+ .ap-portal small{font-size:7px}
+ .ap-portal span{font-size:14px}
+ .portal-life{left:32%;top:8%}
+ .portal-culture{right:2%;top:45%}
+ .portal-fan{left:26%;bottom:19%}
+ .portal-interest{left:1%;top:54%}
+ .ap-collage-word{top:18%;left:5%}
+ .ap-collage-orb{top:31%;right:10%}
+ .ap-collage-caption{bottom:8%;left:5%;max-width:155px;line-height:1.7}
+ .ap-collage-tag{right:4%;bottom:8%}
+}
+@media(max-width:390px){
+ .ap-collage{min-height:460px}
+ .ap-portal{padding:7px 8px}
+ .ap-portal small{display:none}
+ .ap-portal span{font-size:15px}
+ .portal-life{left:27%;top:8%}
+ .portal-culture{right:1%;top:47%}
+ .portal-fan{left:23%;bottom:21%}
+ .portal-interest{left:1%;top:56%}
+}
+@media(prefers-reduced-motion:reduce){
+ .ap-title span:first-child,.ap-title .ap-title-italic,.ap-kicker,.ap-intro{animation:none}
+ .ap-hero-art:after,.ap-portal,.ap-moon,.ap-collage-orb{animation:none}
+ .ap-scroll-progress{display:none}
+}
