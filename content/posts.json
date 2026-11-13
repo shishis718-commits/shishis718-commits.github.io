@@ -1,3 +1,12 @@
 {
-  "articles": []
+  "articles": [
+    {
+      "title": "正在阅读：Playground",
+      "category": "culture",
+      "date": "2026-11-13",
+      "excerpt": "ARON BEAUREGARD · 英文小说 · 阅读中",
+      "cover": "",
+      "body": "这本书正在阅读中。阅读进度和读后感暂时留白，等读到值得记下的段落，再回来慢慢补上。"
+    }
+  ]
 }
