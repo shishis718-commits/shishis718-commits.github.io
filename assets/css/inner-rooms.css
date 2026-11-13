@@ -1,0 +1,23 @@
+/* APPLE PLANET — richer rooms for everyday, culture and interests */
+.page-daily .daily-mood,.page-daily .daily-prompt,.page-culture .culture-shelf,.page-interests .interest-discovery{position:relative;border:1px solid var(--line);background:linear-gradient(135deg,#24211d,#171614 72%);padding:clamp(20px,3vw,34px);overflow:hidden}
+.page-daily .daily-mood:after,.page-culture .culture-shelf:after,.page-interests .interest-discovery:after{content:"✳";position:absolute;right:22px;top:12px;color:var(--detail-accent);font:42px var(--serif);opacity:.18}
+.daily-mood h3,.daily-prompt h3,.culture-shelf h3,.interest-discovery h3{font:clamp(19px,2.5vw,27px) var(--serif);margin:0 0 8px}
+.daily-mood p,.daily-prompt p,.culture-shelf p,.interest-discovery p{color:var(--muted);line-height:1.8}
+.mood-options,.culture-filters,.interest-filters{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.mood-options button,.culture-filters button,.interest-filters button,.prompt-button,.random-interest{border:1px solid var(--line);background:#ffffff08;color:var(--text);padding:9px 14px;font:11px var(--mono);cursor:pointer;transition:.25s}
+.mood-options button:hover,.culture-filters button:hover,.interest-filters button:hover,.prompt-button:hover,.random-interest:hover,.mood-options button[aria-pressed=true],.culture-filters button[aria-pressed=true],.interest-filters button[aria-pressed=true]{border-color:var(--detail-accent);color:var(--detail-accent);background:color-mix(in srgb,var(--detail-accent) 10%,transparent);transform:translateY(-2px)}
+.daily-feedback{min-height:25px;margin-top:15px;color:var(--detail-accent);font:12px/1.7 var(--mono)}
+.daily-prompt{margin-top:18px;background:linear-gradient(110deg,#28231c,#191817)}
+.daily-prompt .prompt-question{color:var(--text);font:italic 19px/1.6 var(--serif);max-width:680px}
+.culture-shelf{margin-top:20px}
+.culture-shelf .shelf-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.shelf-item{min-height:125px;padding:17px;border:1px solid var(--line);background:#ffffff06;display:flex;flex-direction:column;justify-content:space-between}
+.shelf-item b{font:17px var(--serif)}.shelf-item small{font:9px var(--mono);letter-spacing:.12em;color:var(--detail-accent)}
+.page-culture .content-card[hidden],.page-interests .content-card[hidden]{display:none!important}
+.interest-discovery{margin-bottom:20px}
+.interest-discovery .random-interest{margin-top:12px}
+.interest-result{min-height:24px;margin-top:12px;color:var(--detail-accent);font:12px/1.7 var(--mono)}
+.page-interests .content-card{transition:opacity .3s,transform .3s,border-color .3s}
+.page-interests .content-card.is-picked{border-color:var(--detail-accent);box-shadow:0 0 0 1px color-mix(in srgb,var(--detail-accent) 25%,transparent),0 18px 45px #0005}
+@media(max-width:700px){.culture-shelf .shelf-track{grid-template-columns:1fr}.mood-options button,.culture-filters button,.interest-filters button{padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){.mood-options button,.culture-filters button,.interest-filters button,.prompt-button,.random-interest,.page-interests .content-card{transition:none}}
