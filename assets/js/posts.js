@@ -1,5 +1,8 @@
 (()=>{'use strict';
 const root=document.getElementById('ap-published-posts');if(!root)return;
+const randomButton=document.getElementById('apRandomWander');
+const randomStatus=document.getElementById('apRandomStatus');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const safeImage=value=>{const v=String(value||'');return /^(https?:\/\/|\/|assets\/)/i.test(v)?escapeHTML(v):''};
 const safeLink=value=>{const v=String(value||'');return /^(https?:\/\/|\/)/i.test(v)?escapeHTML(v):''};
@@ -7,16 +10,30 @@ const inline=value=>escapeHTML(value).replace(/\*\*(.+?)\*\*/g,'<strong>$1</stro
 const renderBody=value=>String(value||'').trim().split(/\n\s*\n/).filter(Boolean).map(part=>'<p>'+inline(part).replace(/\n/g,'<br>')+'</p>').join('');
 const dateParts=value=>{const m=String(value||'').match(/^(\d{4})-(\d{2})-(\d{2})/);return m?{year:m[1],label:m[1]+'.'+m[2]+'.'+m[3],iso:m[1]+'-'+m[2]+'-'+m[3]}:{year:'未注明日期',label:escapeHTML(value||'日期未注明'),iso:''}};
 const tagList=item=>Array.isArray(item.tags)?item.tags.map(x=>String(x).trim()).filter(Boolean):[];
+if(randomButton)randomButton.addEventListener('click',()=>{
+ const entries=[...root.querySelectorAll('.ap-timeline-entry')];
+ if(!entries.length)return;
+ const chosen=entries[Math.floor(Math.random()*entries.length)];
+ const title=chosen.querySelector('.ap-post-copy h3')?.textContent||'一篇星球日志';
+ const details=chosen.querySelector('.ap-post-details');
+ if(details)details.open=true;
+ randomStatus.textContent='随机拾起：'+title;
+ const summary=details?.querySelector('summary');
+ chosen.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+ summary?.focus({preventScroll:true});
+});
 fetch('content/posts.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('feed unavailable');return r.json()}).then(data=>{
  const articles=(Array.isArray(data.articles)?data.articles:[]).filter(x=>x&&x.title).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
  const filter=root.querySelector('.ap-tag-filter');const list=root.querySelector('.ap-posts-list');const count=root.querySelector('.ap-posts-count');
- if(!articles.length){root.querySelector('.ap-posts-heading .meta').textContent='NOTHING HERE YET / FIRST NOTE SOON';count.textContent='00 ENTRIES';return;}
+ if(!articles.length){root.querySelector('.ap-posts-heading .meta').textContent='NOTHING HERE YET / FIRST NOTE SOON';count.textContent='00 ENTRIES';if(randomButton)randomButton.disabled=true;if(randomStatus)randomStatus.textContent='等第一篇日志抵达，再开始漫游。';return;}
  const tags=[...new Set(articles.flatMap(tagList))].sort((a,b)=>a.localeCompare(b,'zh-CN'));
  filter.hidden=false;filter.innerHTML='<button type="button" class="is-active" data-tag="*">全部 <span>'+articles.length+'</span></button>'+tags.map(t=>'<button type="button" data-tag="'+escapeHTML(t)+'">'+escapeHTML(t)+' <span>'+articles.filter(a=>tagList(a).includes(t)).length+'</span></button>').join('');
  const render=active=>{
   const shown=articles.filter(a=>active==='*'||tagList(a).includes(active));
   count.textContent=String(shown.length).padStart(2,'0')+' ENTRIES';
-  if(!shown.length){list.innerHTML='<p class="ap-empty-state">这个标签下面暂时还没有内容。</p>';return;}
+  if(randomButton)randomButton.disabled=!shown.length;
+  if(!shown.length){list.innerHTML='<p class="ap-empty-state">这个标签下面暂时还没有内容。</p>';if(randomStatus)randomStatus.textContent='这个标签暂时没有可漫游的文章。';return;}
+  if(randomStatus)randomStatus.textContent='从当前内容里随机拾起一篇。';
   let lastYear='';
   list.innerHTML=shown.map((item,i)=>{const d=dateParts(item.date);const cover=safeImage(item.cover);const download=safeLink(item.download);const tagsHtml=tagList(item).map(t=>'<span class="ap-post-tag">'+escapeHTML(t)+'</span>').join('');
    const yearMark=d.year!==lastYear?'<div class="ap-year-marker"><span>'+escapeHTML(d.year)+'</span></div>':'';lastYear=d.year;
@@ -28,5 +45,5 @@ fetch('content/posts.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error
  };
  filter.addEventListener('click',e=>{const button=e.target.closest('button[data-tag]');if(!button)return;filter.querySelectorAll('button').forEach(b=>b.classList.toggle('is-active',b===button));render(button.dataset.tag)});
  root.querySelector('.ap-posts-heading .meta').textContent='THE ARCHIVE / EVERY NOTE HAS ITS MOMENT';render('*');
-}).catch(()=>{root.querySelector('.ap-posts-heading .meta').textContent='THE PLANET IS QUIET RIGHT NOW';root.querySelector('.ap-posts-list').innerHTML='<p class="ap-empty-state">内容暂时无法加载，请稍后刷新。</p>';});
+}).catch(()=>{root.querySelector('.ap-posts-heading .meta').textContent='THE PLANET IS QUIET RIGHT NOW';root.querySelector('.ap-posts-list').innerHTML='<p class="ap-empty-state">内容暂时无法加载，请稍后刷新。</p>';if(randomButton)randomButton.disabled=true;if(randomStatus)randomStatus.textContent='暂时无法读取日志，稍后再来漫游。';});
 })();
