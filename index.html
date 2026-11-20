@@ -28,11 +28,11 @@
         <span class="ap-feed-scroll">SCROLL TO WANDER ↓</span>
   </section>
   <section class="ap-timeline-section" aria-label="星球时间轴">
-    <div class="ap-timeline-heading"><div><span class="ap-kicker">THE PLANET LOG / CHRONOLOGICAL ARCHIVE</span><h2>最近留下的痕迹</h2></div><span class="ap-sort-note">NEWEST FIRST ↓</span></div>
+    <div class="ap-timeline-heading"><div><span class="ap-kicker">THE PLANET LOG / CHRONOLOGICAL ARCHIVE</span><h2>最近留下的痕迹</h2></div><div class="ap-timeline-tools"><button class="ap-random-wander" id="apRandomWander" type="button" disabled aria-controls="ap-posts-list" aria-describedby="apRandomStatus">✳ 随机漫游</button><span class="ap-sort-note">NEWEST FIRST ↓</span><span class="ap-random-status" id="apRandomStatus" role="status" aria-live="polite">从当前内容里随机拾起一篇。</span></div></div>
     <div id="ap-published-posts" class="ap-published-posts" aria-live="polite">
       <div class="ap-posts-heading"><span class="meta">LOADING THE PLANET…</span><span class="ap-posts-count"></span></div>
       <nav class="ap-tag-filter" aria-label="按标签筛选" hidden></nav>
-      <div class="ap-posts-list"></div>
+      <div class="ap-posts-list" id="ap-posts-list"></div>
     </div>
   </section>
   <footer class="ap-footer"><span>© 2026 APPLE PLANET · MADE OF SMALL THINGS</span><span>NO CATEGORIES, JUST LITTLE TRACES.</span><span>THANKS FOR WANDERING.</span></footer>
