@@ -2,76 +2,97 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f5f3ee">
-<title>EVERYTHING IS FINE — A Better You, Every Day</title>
-<meta name="description" content="A brighter day begins with a better you.">
+<meta name="theme-color" content="#050607">
+<title>ARCHIVE 04 — SIGNAL LOST</title>
 <style>
-:root{--paper:#f5f3ee;--ink:#20231f;--muted:#777b72;--green:#536c55;--line:#dcded5;--red:#a52d2d}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;transition:background 1.8s,color 1.8s;overflow-x:hidden}a{color:inherit}.top{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(22px,7vw,100px);border-bottom:1px solid var(--line);position:sticky;top:0;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(12px);z-index:5;transition:.8s}.logo{font-weight:800;letter-spacing:.14em;font-size:13px}.nav{display:flex;gap:28px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.nav a{text-decoration:none}.hero{min-height:88vh;display:grid;align-content:center;padding:100px clamp(24px,13vw,190px);position:relative}.eyebrow,.micro{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--green)}h1{font-size:clamp(54px,10vw,136px);line-height:.91;letter-spacing:-.075em;font-weight:550;max-width:900px;margin:35px 0}.hero p{max-width:470px;color:var(--muted);font-size:18px}.cta{display:inline-flex;margin-top:30px;padding:13px 23px;background:var(--green);color:white;text-decoration:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-radius:2px}.sun{position:absolute;width:clamp(110px,18vw,240px);aspect-ratio:1;border-radius:50%;background:#e6e4d6;right:13%;top:24%;box-shadow:0 0 90px #d7d8c5;z-index:-1}.section{padding:130px clamp(24px,13vw,190px);border-top:1px solid var(--line);min-height:72vh;display:grid;align-content:center;position:relative}.section h2{font-size:clamp(36px,6vw,76px);line-height:1.02;letter-spacing:-.06em;font-weight:500;max-width:800px;margin:22px 0}.section p{max-width:560px;color:var(--muted);font-size:17px}.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}.tile{min-height:160px;padding:24px;background:#e9e9e1;border:1px solid #dfe1d7;display:flex;flex-direction:column;justify-content:space-between}.tile b{font-size:12px;letter-spacing:.1em}.tile span{font-size:12px;color:#777}.quote{margin-top:35px;padding:24px 28px;border-left:2px solid var(--green);max-width:540px;background:#eeeee8;font-family:Georgia,serif;font-size:20px}.fine{font-size:10px!important;letter-spacing:.15em;text-transform:uppercase}.glitch{position:relative}.wrong{opacity:0;transition:opacity 1.4s}.reveal .wrong{opacity:1}.static{position:fixed;inset:0;pointer-events:none;z-index:8;opacity:0;background:repeating-linear-gradient(0deg,#0000 0 2px,#0000000b 3px 4px);mix-blend-mode:multiply;transition:opacity .6s}.stage-two{--paper:#e9e8df;--ink:#30312d;--green:#7a7770;--line:#c6c4bb}.stage-two .sun{background:#d3d0c6;box-shadow:0 0 100px #b7b4a8}.stage-two .hero p,.stage-two .section p{color:#66645e}.stage-three{--paper:#171918;--ink:#d8d7ce;--muted:#99988f;--line:#393b37;--green:#a6a398}.stage-three .top{background:#171918e8}.stage-three .tile,.stage-three .quote{background:#222522;border-color:#393b37;color:#d8d7ce}.stage-three .tile span{color:#aaa}.stage-three .sun{background:#373b35;box-shadow:0 0 120px #272a25}.stage-four{--paper:#050606;--ink:#d6d2c8;--muted:#77736d;--line:#242321;--green:#8e2828}.stage-four .top{background:#050606e8}.stage-four .sun{background:#171211;box-shadow:0 0 140px #270e0e}.stage-four .cta{background:#7e1717}.stage-four .eyebrow,.stage-four .micro{color:#b45a54}.stage-four .static{opacity:.5}.stage-four .section{min-height:100vh}.final{min-height:110vh;text-align:center;justify-items:center;background:radial-gradient(ellipse at center,#1b1111 0,#050606 55%)}.final h2{font-family:Georgia,serif;font-size:clamp(44px,8vw,100px);letter-spacing:-.04em;max-width:950px}.final p{font-family:monospace;letter-spacing:.16em;font-size:11px}.blink{animation:blink 4s infinite}@keyframes blink{0%,96%,100%{opacity:1}97%,99%{opacity:.12}}.cursor-note{position:fixed;bottom:18px;right:22px;font:10px monospace;letter-spacing:.14em;color:#777;z-index:4;opacity:0;transition:opacity 1s}.stage-three .cursor-note,.stage-four .cursor-note{opacity:.8}.footer{padding:30px clamp(24px,7vw,100px);font-size:10px;letter-spacing:.15em;color:var(--muted);display:flex;justify-content:space-between;gap:20px}.tiny{font-size:11px!important;opacity:.6}
-@media(max-width:650px){.nav{gap:12px;font-size:9px}.top{height:64px}.hero{min-height:82vh;padding-top:80px}.sun{right:8%;top:15%}.section{padding-top:95px;padding-bottom:95px}.tiles{grid-template-columns:1fr}.tile{min-height:120px}.footer{flex-direction:column}.final{min-height:100vh}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
-
-/* deeper unease */
-body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:7;opacity:0;background:radial-gradient(ellipse at center,transparent 38%,#000 100%);transition:opacity 2s}
-.stage-three:after{opacity:.42}.stage-four:after{opacity:.82}
-#anomaly{position:fixed;z-index:20;inset:0;display:grid;place-items:center;padding:28px;background:#050606f2;color:#d8d2c8;font:clamp(18px,3vw,34px)/1.5 Georgia,serif;text-align:center;letter-spacing:.02em;opacity:0;visibility:hidden;transition:opacity .35s;pointer-events:none}
-#anomaly.show{opacity:1;visibility:visible}
-#anomaly small{display:block;margin-top:22px;color:#a34c48;font:10px/1.6 monospace;letter-spacing:.22em}
-#whisper{position:fixed;z-index:9;left:50%;top:50%;transform:translate(-50%,-50%);font:10px monospace;letter-spacing:.25em;color:#b33;opacity:0;pointer-events:none;white-space:nowrap}
-#whisper.show{animation:whisper 2.8s ease forwards}
-@keyframes whisper{0%,100%{opacity:0}15%,75%{opacity:.7}}
-.stage-four .logo{letter-spacing:.3em}.stage-four .top{border-color:#5a1717}
-.stage-four .final h2{animation:distort 7s infinite}
-@keyframes distort{0%,92%,100%{transform:translateX(0);text-shadow:none}93%{transform:translateX(3px);text-shadow:-3px 0 #8d2020,3px 0 #ddd}95%{transform:translateX(-2px);text-shadow:2px 0 #8d2020,-2px 0 #ddd}}
-@media(max-width:650px){#anomaly{padding:22px}}
+:root{color-scheme:dark;--red:#c52c25;--green:#8bba91;--white:#d9ddd7;--dim:#68706b}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:#050607}body{margin:0;background:#050607;color:var(--white);font:14px/1.5 "Courier New",monospace;overflow-x:hidden;cursor:crosshair}
+body:before{content:"";position:fixed;inset:0;z-index:30;pointer-events:none;opacity:.17;background:repeating-linear-gradient(0deg,transparent 0 2px,#d7e2d90b 3px 4px),radial-gradient(ellipse at center,transparent 35%,#000 100%);mix-blend-mode:screen}
+body:after{content:"";position:fixed;inset:0;z-index:29;pointer-events:none;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+button{font:inherit;color:inherit;background:transparent;border:1px solid #59615b;padding:13px 18px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}button:hover{background:#d7ddd0;color:#090b0a}
+a{color:inherit}.topline{height:42px;border-bottom:1px solid #29302b;display:flex;justify-content:space-between;align-items:center;padding:0 22px;color:#7d8980;font-size:10px;letter-spacing:.16em}
+.signal{color:var(--red)}.wrap{max-width:1080px;margin:auto;padding:0 24px}
+.intro{min-height:calc(100svh - 42px);display:grid;place-items:center;text-align:center;position:relative;padding:60px 0}
+.intro:before{content:"";position:absolute;width:min(70vw,620px);aspect-ratio:1;border:1px solid #252b27;border-radius:50%;box-shadow:0 0 100px #19231c30,inset 0 0 100px #19231c25}
+.kicker{color:var(--red);font-size:10px;letter-spacing:.34em}
+h1{font-size:clamp(44px,9vw,100px);line-height:.88;letter-spacing:-.08em;font-weight:400;margin:25px 0;text-shadow:0 0 22px #a4b6a015}
+.sub{color:#89938b;max-width:450px;margin:0 auto 32px;font-size:12px;letter-spacing:.05em}
+#start{border-color:#9c332d;color:#e3d8d3;position:relative;z-index:1}
+#start:hover{background:#9c332d;color:white}
+.warning{margin-top:20px;color:#59615b;font-size:9px;letter-spacing:.12em}
+#experience{display:none}
+.monitor-shell{padding:34px 0 100px;min-height:100vh}
+.monitor-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#78847b;font-size:10px;letter-spacing:.14em;border-bottom:1px solid #28302a;padding-bottom:13px}
+.rec{color:var(--red);animation:rec 1.2s steps(2) infinite}@keyframes rec{50%{opacity:.25}}
+.feed{height:min(68vw,570px);min-height:330px;position:relative;margin:22px 0;background:#111713;border:1px solid #333b34;overflow:hidden;display:grid;place-items:center}
+.feed:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,#c9d4c60a 50%,transparent 50.2%),linear-gradient(transparent 49.8%,#c9d4c60a 50%,transparent 50.2%),radial-gradient(ellipse at 50% 48%,#39453b 0,#161d18 44%,#050706 100%)}
+.camera-label{position:absolute;top:14px;left:16px;color:#a4b2a5;font-size:10px;z-index:2}
+.camera-time{position:absolute;top:14px;right:16px;color:#b3beb4;font-size:11px;z-index:2}
+.cam-bottom{position:absolute;bottom:14px;left:16px;right:16px;display:flex;justify-content:space-between;color:#9aa69b;font-size:10px;z-index:2}
+.room{position:absolute;inset:0;opacity:.65}
+.door{position:absolute;width:23%;height:76%;left:39%;bottom:0;border:2px solid #465147;background:linear-gradient(90deg,#0a0e0b,#202820 45%,#080b09);box-shadow:0 0 30px #000}
+.door:after{content:"";position:absolute;right:12%;top:50%;width:5px;height:5px;background:#8e9a8c;border-radius:50%}
+.shadow-person{position:absolute;width:19%;height:70%;bottom:-3%;left:42%;background:#030504;clip-path:polygon(39% 0,61% 0,72% 12%,74% 25%,88% 38%,100% 100%,0 100%,12% 38%,26% 25%,28% 12%);filter:blur(4px);opacity:0;transition:opacity 1.8s}
+.feed.seen .shadow-person{opacity:.8}
+.feed.glitch{animation:glitch .22s steps(2) 5}
+@keyframes glitch{0%{transform:translate(0)}25%{transform:translate(5px,-2px);filter:hue-rotate(40deg)}50%{transform:translate(-4px,2px);filter:contrast(2)}75%{transform:translate(2px,3px)}}
+.caption{min-height:70px;color:#aab2aa;font-size:12px;max-width:650px;white-space:pre-line}
+.log{border-top:1px solid #28302a;margin-top:28px;padding-top:18px;color:#657168;font-size:10px;line-height:2}
+.log p{margin:0}.log .bad{color:#b65a52}
+.spacer{height:48vh;display:grid;place-items:center;color:#3f4941;font-size:10px;letter-spacing:.3em}
+#scare{position:fixed;inset:0;z-index:100;background:#020303;display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .08s}
+#scare.active{opacity:1;visibility:visible}
+.face{width:min(85vw,650px);height:min(85vh,720px);filter:contrast(1.4) brightness(.65) drop-shadow(0 0 30px #8e1616);transform:scale(1.12)}
+#scare .message{position:absolute;bottom:5vh;color:#c9c3b8;font-size:10px;letter-spacing:.3em}
+#after{position:fixed;inset:0;z-index:101;background:#030404;display:none;place-items:center;text-align:center;padding:25px}
+#after.show{display:grid}#after h2{font-size:clamp(28px,6vw,65px);font-weight:400;letter-spacing:-.06em}#after p{color:#788078;font-size:10px;letter-spacing:.2em}
+@media(max-width:600px){.topline{padding:0 12px;font-size:8px}.wrap{padding:0 15px}.feed{min-height:300px}.monitor-shell{padding-top:22px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="static"></div><div id="anomaly" role="status" aria-live="polite"></div><div id="whisper"></div><div class="cursor-note" id="cursorNote">WE KNOW YOU ARE STILL READING.</div>
-<header class="top"><a class="logo" href="#home" style="text-decoration:none">EVERYTHING IS FINE<span style="color:#8b9b83">®</span></a><nav class="nav"><a href="#promise">Our promise</a><a href="#stories">Stories</a><a href="#contact">Contact</a></nav></header>
-<main id="home">
-<section class="hero" data-stage="1"><div class="sun"></div><span class="eyebrow">A SMALLER STEP TOWARD A BETTER LIFE</span><h1>Make room<br>for <i>better.</i></h1><p>Thoughtful routines. A calmer home. More meaningful days. Discover a simple way to feel a little more like yourself.</p><a class="cta" href="#promise">Discover the difference&nbsp; ↗</a></section>
-<section class="section" id="promise" data-stage="1"><span class="micro">01 / OUR PROMISE</span><h2>Good days don't happen by accident.</h2><p>They are made from little things: a familiar cup, a clean room, a kind word, and the comfort of knowing what comes next.</p><div class="tiles"><div class="tile"><b>01 — ROUTINE</b><span>Find your natural rhythm.</span></div><div class="tile"><b>02 — COMFORT</b><span>Make space for what matters.</span></div><div class="tile"><b>03 — CONNECTION</b><span>Feel a little less alone.</span></div></div></section>
-<section class="section" data-stage="2"><span class="micro">02 / A NOTE FROM OUR TEAM</span><h2 class="glitch">We believe everyone deserves to feel at home.</h2><p>Especially here. Especially now. You have been doing so well.</p><div class="quote">“I used to feel like someone was standing behind me. Now I know that's just part of feeling supported.”<br><span class="fine">— A VERY SATISFIED CUSTOMER</span></div><p class="wrong fine">THE CUSTOMER HAS ASKED US NOT TO USE THEIR REAL NAME AGAIN.</p></section>
-<section class="section" id="stories" data-stage="2"><span class="micro">03 / REAL PEOPLE, REAL STORIES</span><h2>You're in good company.</h2><p>Thousands have already found their place. Some have been with us longer than they remember.</p><div class="tiles"><div class="tile"><b>★★★★★</b><span>“They remembered me.” — M.</span></div><div class="tile"><b>★★★★★</b><span>“I feel seen every morning.” — M.</span></div><div class="tile"><b>★★★★★</b><span>“I never have to leave.” — M.</span></div></div><p class="wrong">Please stop looking for the fourth review. There are only three.</p></section>
-<section class="section" data-stage="3"><span class="micro">04 / A QUICK REMINDER</span><h2>There is no reason to look behind you.</h2><p>Keep your eyes on the page. The page is safe. The page is where we are.</p><div class="quote">Your session has been active for <span id="elapsed">00:00</span>.<br><span class="fine">THANK YOU FOR STAYING WITH US.</span></div><p class="wrong fine">WE DID NOT ASK YOU TO STAY. YOU DID THAT YOURSELF.</p></section>
-<section class="section" data-stage="3"><span class="micro">05 / FREQUENTLY ASKED QUESTIONS</span><h2>Everything you need to know.</h2><p><b>Q: Can I leave at any time?</b><br>A: Of course. The exit is where you left it.</p><p><b>Q: Why does the page look different?</b><br>A: It doesn't. You may be tired.</p><p><b>Q: Is someone else here?</b><br>A: There is nobody else here.</p><p class="wrong">Q: Why is there a reflection in the screen?<br>A: Please do not turn around.</p></section>
-<section class="section final" id="contact" data-stage="4"><span class="micro">06 / THANK YOU FOR VISITING</span><h2 class="blink">You were never<br>supposed to be here.</h2><p>THIS SESSION HAS BEEN NOTED.</p><p class="tiny">PLEASE CLOSE THE WINDOW. PLEASE.</p><a class="cta" href="#home" id="return">Return to the beginning</a></section>
-</main>
-<footer class="footer"><span>© EVERYTHING IS FINE®</span><span>YOUR COMFORT IS OUR PRIORITY</span><span>HAVE A NICE DAY.</span></footer>
+<div class="topline"><span>INDEPENDENT ARCHIVE / TAPE 04</span><span class="signal">● SIGNAL UNSTABLE</span></div>
+<section class="intro" id="intro"><div class="wrap"><div class="kicker">RECOVERED FOOTAGE — DO NOT DISTRIBUTE</div><h1>THE ROOM<br>IS NOT EMPTY.</h1><p class="sub">A damaged recording was recovered from an apartment building that has been vacant for eleven years. The final 43 seconds were not included in the original file.</p><button id="start">▶ &nbsp; RESTORE RECORDING</button><div class="warning">HEADPHONES RECOMMENDED · FICTIONAL HORROR EXPERIENCE</div></div></section>
+<main id="experience"><div class="wrap monitor-shell">
+<div class="monitor-head"><span>CAM 04 / EAST HALLWAY</span><span class="rec">● REC</span><span id="clock">02:13:08 AM</span></div>
+<div class="feed" id="feed"><div class="room"><div class="door"></div><div class="shadow-person"></div></div><span class="camera-label">CH04 // NIGHT VISION</span><span class="camera-time" id="stamp">11-03-2009 02:13:08</span><div class="cam-bottom"><span>NO MOTION DETECTED</span><span>IR: ON &nbsp; AUDIO: --</span></div></div>
+<div class="caption" id="caption">Restoring damaged frames…</div>
+<div class="log" id="log"><p>[02:13:08] FILE OPENED</p><p>[02:13:09] IMAGE CORRUPTION: 17%</p></div>
+<div class="spacer">KEEP WATCHING THE DOOR</div>
+<div class="monitor-head"><span>ARCHIVE STATUS</span><span id="status">PLAYBACK IN PROGRESS</span></div>
+</div></main>
+<div id="scare" aria-hidden="true">
+<svg class="face" viewBox="0 0 600 720" xmlns="http://www.w3.org/2000/svg" aria-label="A distorted shadowy face">
+<defs><radialGradient id="skin"><stop stop-color="#b9b4a5"/><stop offset=".55" stop-color="#54564e"/><stop offset="1" stop-color="#050606"/></radialGradient><filter id="rough"><feTurbulence baseFrequency=".035" numOctaves="3" seed="8" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="18"/></filter></defs>
+<path d="M300 28 C135 20 80 160 92 360 C98 555 180 700 300 710 C420 700 502 555 508 360 C520 160 465 20 300 28Z" fill="url(#skin)" filter="url(#rough)"/>
+<path d="M115 290 Q190 210 270 292 Q190 340 115 290Z" fill="#030303"/><path d="M330 292 Q410 210 485 290 Q410 340 330 292Z" fill="#030303"/>
+<ellipse cx="195" cy="292" rx="18" ry="10" fill="#d8d4c5"/><ellipse cx="405" cy="292" rx="18" ry="10" fill="#d8d4c5"/>
+<circle cx="195" cy="292" r="6" fill="#080808"/><circle cx="405" cy="292" r="6" fill="#080808"/>
+<path d="M300 300 L270 450 L325 454" fill="none" stroke="#22231f" stroke-width="22"/>
+<path d="M205 530 Q300 475 395 530 Q300 650 205 530Z" fill="#080707"/><path d="M225 530 Q300 555 375 530" stroke="#aaa397" stroke-width="7" fill="none"/>
+<path d="M145 180 Q300 110 455 180" stroke="#080909" stroke-width="28" fill="none"/>
+</svg><div class="message">YOU WERE NOT SUPPOSED TO SEE THIS FRAME.</div>
+</div>
+<div id="after"><div><h2>THE CAMERA WAS FACING THE WALL.</h2><p>THEN WHO WAS STANDING IN FRONT OF IT?</p><button id="again">REPLAY TAPE</button></div></div>
 <script>
 (()=>{
- const body=document.body, start=Date.now(), elapsed=document.getElementById('elapsed');
- const anomaly=document.getElementById('anomaly'),whisper=document.getElementById('whisper');
- let stage=1,shown=new Set(),lastEvent=0,mouse={x:.5,y:.5};
- const events=[
-  ["You have been here before.","We kept the place exactly as you left it."],
-  ["Don't refresh the page.","It takes longer to put everything back."],
-  ["There is someone reading over your shoulder.","No. Not in the room. In the reflection."],
-  ["We noticed you stopped scrolling.","Were you listening?"],
-  ["Your name looks different from here.","We won't try it again."],
-  ["The page is shorter when you're not looking.","Keep looking."],
-  ["A message was left for you.","It says: DON'T LET IT FINISH."],
-  ["You can close this tab.","We will still be open."]
- ];
- function pop(message,sub="PLEASE CONTINUE."){anomaly.innerHTML=message+'<small>'+sub+'</small>';anomaly.classList.add('show');setTimeout(()=>anomaly.classList.remove('show'),3600)}
- function update(){
-  const p=scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight);
-  const next=p<.24?1:p<.53?2:p<.79?3:4;
-  if(next!==stage){stage=next;body.classList.remove('stage-two','stage-three','stage-four');if(stage===2)body.classList.add('stage-two');if(stage===3)body.classList.add('stage-three');if(stage===4){body.classList.add('stage-four');if(!shown.has('final')){shown.add('final');setTimeout(()=>pop("You found the part we hid.","THIS WAS NOT MEANT TO BE INDEXED."),1800)}}}
-  if(p>.3)body.classList.add('reveal');
- }
- addEventListener('scroll',update,{passive:true});update();
- addEventListener('mousemove',e=>{mouse.x=e.clientX/innerWidth;mouse.y=e.clientY/innerHeight;});
- setInterval(()=>{
-  const s=Math.floor((Date.now()-start)/1000);
-  elapsed.textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
-  if(stage>=3&&Date.now()-lastEvent>17000&&Math.random()<.58){lastEvent=Date.now();const e=events[Math.floor(Math.random()*events.length)];pop(e[0],e[1]);}
- },2200);
- setInterval(()=>{if(stage>=2&&Math.random()<.12){whisper.textContent=["DON'T LOOK AWAY","WE HEARD THAT","STILL HERE?","BEHIND YOU"][Math.floor(Math.random()*4)];whisper.style.left=(25+Math.random()*50)+"%";whisper.style.top=(25+Math.random()*50)+"%";whisper.classList.remove('show');void whisper.offsetWidth;whisper.classList.add('show');}},8500);
- document.addEventListener('visibilitychange',()=>{if(document.hidden&&stage>=2){document.title="We noticed you left."; }else{document.title=stage>=3?"You came back. — EVERYTHING IS FINE":"EVERYTHING IS FINE — A Better You, Every Day";if(stage>=3)setTimeout(()=>pop("Welcome back.","WE DIDN'T MOVE."),900)}});
- document.getElementById('return').addEventListener('click',()=>{body.classList.remove('stage-two','stage-three','stage-four','reveal');stage=1;shown.clear();document.title="EVERYTHING IS FINE — A Better You, Every Day";setTimeout(update,800)});
- // The pointer seems to pull the page's faint shadow toward it.
- addEventListener('mousemove',e=>{if(stage>=3){const x=(e.clientX/innerWidth-.5)*5,y=(e.clientY/innerHeight-.5)*5;document.documentElement.style.setProperty('--look',x+'px '+y+'px')}});
+const start=document.getElementById('start'),intro=document.getElementById('intro'),experience=document.getElementById('experience'),feed=document.getElementById('feed'),caption=document.getElementById('caption'),log=document.getElementById('log'),scare=document.getElementById('scare'),after=document.getElementById('after'),status=document.getElementById('status');
+let audioCtx=null,started=false,scared=false,timers=[],audioNodes=[];
+function later(fn,ms){timers.push(setTimeout(fn,ms))}
+function line(t,bad=false){const p=document.createElement('p');p.textContent=t;if(bad)p.className='bad';log.appendChild(p)}
+function tone(freq,duration,gain=.025,type='sine'){if(!audioCtx)return;const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.value=freq;g.gain.setValueAtTime(gain,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+duration);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+duration);audioNodes.push(o)}
+function staticBurst(){if(!audioCtx)return;const n=audioCtx.sampleRate*.32,b=audioCtx.createBuffer(1,n,audioCtx.sampleRate),d=b.getChannelData(0);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*.22;const s=audioCtx.createBufferSource(),g=audioCtx.createGain();s.buffer=b;g.gain.value=.13;s.connect(g);g.connect(audioCtx.destination);s.start()}
+function reset(){timers.forEach(clearTimeout);timers=[];scared=false;started=false;after.classList.remove('show');scare.classList.remove('active');experience.style.display='none';intro.style.display='grid';feed.classList.remove('seen','glitch');log.innerHTML='<p>[02:13:08] FILE OPENED</p><p>[02:13:09] IMAGE CORRUPTION: 17%</p>';caption.textContent='Restoring damaged frames…';status.textContent='PLAYBACK IN PROGRESS'}
+function jump(){if(scared)return;scared=true;feed.classList.add('glitch');staticBurst();tone(92,.8,.09,'sawtooth');scare.classList.add('active');status.textContent='FRAME RECOVERED';later(()=>{scare.classList.remove('active');after.classList.add('show')},1250)}
+function begin(){if(started)return;started=true;intro.style.display='none';experience.style.display='block';experience.scrollIntoView();try{audioCtx=new (window.AudioContext||window.webkitAudioContext)();audioCtx.resume();tone(48,3,.018)}catch(e){}
+caption.textContent='The hallway is empty. The clock has not moved in eleven years.';
+later(()=>{line('[02:13:14] MOTION DETECTED — FRAME 188',true);caption.textContent='Motion detected at the far end of the hallway.';feed.classList.add('seen');tone(54,2,.035)},6500);
+later(()=>{line('[02:13:21] SUBJECT COUNT: 02',true);caption.textContent='There is a second figure in the room. The door has not opened.';document.querySelector('.cam-bottom span').textContent='SUBJECT COUNT: 02';tone(41,3,.04)},14000);
+later(()=>{line('[02:13:29] CAMERA POSITION CHANGED',true);caption.textContent='The camera is moving. No one has accessed the control room.';feed.classList.add('glitch');staticBurst()},22000);
+later(()=>{line('[02:13:36] WARNING: SUBJECT FACING CAMERA',true);caption.textContent='It is looking directly into the lens now.';document.querySelector('.shadow-person').style.opacity='1';tone(37,4,.045)},30000);
+later(()=>{line('[02:13:49] FINAL FRAME RESTORED',true);caption.textContent='The recovered frame does not match the room.';jump()},39000);
+}
+start.addEventListener('click',begin);document.getElementById('again').addEventListener('click',reset);
 })();
 </script>
 </body></html>
