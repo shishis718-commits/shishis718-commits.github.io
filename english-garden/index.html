@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4f0e7"><meta name="description" content="Apple Planet English Garden — 记录词根学习、单词积累和每日评语。"><title>English Garden — Apple Planet</title>
+<style>
+:root{--paper:#f4f0e7;--ink:#262b25;--muted:#7b8175;--green:#526d55;--lime:#dce5c8;--orange:#d58b5b;--line:#d9d6ca;--white:#fffdf7;--pink:#ead8d0}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Avenir Next",system-ui,-apple-system,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.shell{max-width:1180px;margin:auto;padding:0 28px}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.1em}.brand{font-weight:750;letter-spacing:-.03em;text-decoration:none;color:var(--ink);font-size:17px}.brand span{color:var(--green)}.nav a:last-child{color:var(--muted);text-decoration:none}
+.hero{padding:68px 0 45px;display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}.eyebrow{font-size:10px;letter-spacing:.22em;color:var(--green);font-weight:700}.hero h1{font:500 clamp(48px,8vw,92px)/.92 Georgia,serif;letter-spacing:-.065em;margin:20px 0}.hero h1 em{color:var(--green);font-weight:400}.hero p{max-width:540px;color:#697166;line-height:1.8;font-size:14px}.hero-art{height:260px;position:relative;display:grid;place-items:center}.orb{width:205px;height:205px;border-radius:50%;background:radial-gradient(circle at 35% 28%,#fffde9 0 8%,#dce5c8 9% 34%,#8da58b 65%,#526d55 100%);box-shadow:20px 25px 0 -12px #d6c6a7,0 25px 55px #536a4a35;position:relative}.orb:after{content:"a";font:italic 120px Georgia,serif;color:#f4f0e7;position:absolute;inset:18px 0 0;text-align:center;opacity:.75}.orbit{position:absolute;width:280px;height:85px;border:1px solid #b8b9a4;border-radius:50%;transform:rotate(-24deg)}.spark{position:absolute;font-size:25px;color:var(--orange)}.spark.one{top:22px;right:20%}.spark.two{bottom:24px;left:15%;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0 38px}.stat{background:var(--white);border:1px solid var(--line);border-radius:15px;padding:18px 20px;min-height:108px}.stat small{display:block;color:var(--muted);font-size:10px;letter-spacing:.12em}.stat strong{display:block;font:500 34px Georgia,serif;margin-top:8px}.stat span{font-size:11px;color:var(--muted)}
+.section{margin:52px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px}.section-head h2{font:500 32px Georgia,serif;margin:7px 0 0;letter-spacing:-.04em}.section-head p{color:var(--muted);font-size:12px;margin:0}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:23px}.progress-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}.track{margin:15px 0 20px}.track-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}.bar{height:8px;border-radius:20px;background:#e8e7dc;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:20px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{background:#edf0e5;color:#526d55;padding:6px 10px;border-radius:30px;font-size:11px}.chip.warm{background:#f4e8df;color:#986341}
+.lesson{display:grid;grid-template-columns:54px 1fr auto;gap:14px;align-items:center;padding:15px 0;border-bottom:1px solid #eeece4}.lesson:last-child{border:0}.lesson-num{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--lime);font:18px Georgia,serif;color:var(--green)}.lesson b{font-size:14px}.lesson p{font-size:11px;color:var(--muted);margin:4px 0 0}.status{font-size:10px;color:var(--green);background:#edf1e8;border-radius:20px;padding:6px 9px}
+.comment-card{background:#29372e;color:#f4f0e7;border-radius:18px;padding:26px;position:relative;overflow:hidden}.comment-card:after{content:"✳";position:absolute;right:15px;top:-35px;font-size:150px;color:#ffffff0c}.comment-card .eyebrow{color:#c5d4b6}.comment-card blockquote{font:italic 22px/1.5 Georgia,serif;margin:18px 0;max-width:760px;position:relative;z-index:1}.comment-card small{color:#b4c0b0;font-size:10px;letter-spacing:.1em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:11px;color:var(--muted)}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:10px;background:#fffefa;padding:11px 12px;color:var(--ink);outline:none}.field input:focus,.field textarea:focus{border-color:var(--green)}.field textarea{min-height:76px;resize:vertical}.wide{grid-column:1/-1}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.primary,.secondary{border:0;border-radius:30px;padding:11px 17px;font-size:12px}.primary{background:var(--green);color:white}.secondary{background:#ecebe2;color:#4b5549}.history{display:grid;gap:10px}.entry{border:1px solid var(--line);border-radius:13px;padding:15px;background:#fffefa}.entry-top{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted)}.entry h3{font:20px Georgia,serif;margin:8px 0}.entry p{font-size:12px;line-height:1.7;color:#626b60;margin:6px 0}.entry .remark{padding:10px 12px;background:#f2f2e9;border-radius:9px;color:#4e624f}.entry button{border:0;background:none;color:#9a6d54;font-size:11px;padding:5px 0}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.day{background:#f0efe7;border-radius:10px;text-align:center;padding:12px 4px;font-size:10px;color:var(--muted)}.day i{display:block;width:9px;height:9px;border-radius:50%;background:#d4d4c9;margin:10px auto 0}.day.active i{background:var(--green);box-shadow:0 0 0 4px #dfe7d8}
+.footer{border-top:1px solid var(--line);padding:25px 0 45px;display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:10px;letter-spacing:.1em}
+@media(max-width:760px){.shell{padding:0 17px}.hero{grid-template-columns:1fr;padding-top:48px}.hero-art{height:190px}.orb{width:150px;height:150px}.orb:after{font-size:90px}.orbit{width:220px}.stats{grid-template-columns:1fr 1fr}.progress-layout,.grid2{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.formgrid{grid-template-columns:1fr}.wide{grid-column:auto}.footer{flex-direction:column}}
+</style></head>
+<body><div class="shell">
+<nav class="nav"><a class="brand" href="../">✳ APPLE <span>PLANET</span> / ENGLISH</a><a href="../">← BACK TO MY PLANET</a></nav>
+<header class="hero"><div><div class="eyebrow">A SMALL GARDEN FOR BIG WORDS · EST. 2026</div><h1>English<br><em>in bloom.</em></h1><p>把学过的词根、记住的单词、答错后重新弄懂的瞬间，都种在这里。进步不必轰轰烈烈，今天比昨天多懂一点就很好。</p></div><div class="hero-art"><div class="orbit"></div><div class="orb"></div><span class="spark one">✳</span><span class="spark two">✦</span></div></header>
+<section class="stats">
+<div class="stat"><small>STUDY DAYS / 学习天数</small><strong id="days">2</strong><span>每一次打开书本都算数</span></div>
+<div class="stat"><small>ROOTS / 词根主题</small><strong id="roots">3</strong><span>从词根长出词汇森林</span></div>
+<div class="stat"><small>WORDS / 记录词汇</small><strong id="words">18</strong><span>以实际记录为准</span></div>
+<div class="stat"><small>STREAK / 连续学习</small><strong id="streak">2</strong><span>慢慢养成自己的节奏</span></div>
+</section>
+<section class="section"><div class="section-head"><div><div class="eyebrow">YOUR LEARNING MAP</div><h2>正在生长的知识</h2></div><p>不是考试排名，是自己的进度地图。</p></div>
+<div class="panel progress-layout"><div><div class="eyebrow">ROOTS & AFFIXES</div>
+<div class="track"><div class="track-label"><b>spect — 看 / 观察</b><span>已学 · Day 1</span></div><div class="bar"><i style="width:100%"></i></div></div>
+<div class="track"><div class="track-label"><b>port — 携带 / 运送</b><span>已学 · Day 2</span></div><div class="bar"><i style="width:100%"></i></div></div>
+<div class="track"><div class="track-label"><b>scrib / script — 写 / 记录</b><span>正在巩固 · Day 3–5</span></div><div class="bar"><i style="width:72%"></i></div></div>
+<div class="chips"><span class="chip">describe</span><span class="chip">subscribe</span><span class="chip">prescribe</span><span class="chip">manuscript</span><span class="chip">transcript</span><span class="chip warm">inscription ↗</span><span class="chip warm">transcription ↗</span></div></div>
+<div><div class="eyebrow">CURRENT FOCUS / 当前复习重点</div><h3 style="font:25px Georgia,serif;margin:13px 0 8px">把相似的词分清楚。</h3><p style="font-size:12px;line-height:1.8;color:var(--muted)">优先巩固这些容易混淆或还不够熟悉的词：prospective、retrospect、spectacle、spectacular、inscription、transcription。</p><div class="chips"><span class="chip warm">错词回访</span><span class="chip">词义辨析</span><span class="chip">拼写记忆</span></div><p style="font-size:11px;color:var(--muted);margin-top:18px">学习方式：每天一个词根 / 词缀 · 5–8 个常见词 · 例句 · 联想 · 小测。</p></div></div></section>
+<section class="section"><div class="section-head"><div><div class="eyebrow">A NOTE FROM YOUR STUDY PARTNER</div><h2>今日评语</h2></div><p>认真记录，不敷衍夸奖。</p></div>
+<div class="comment-card"><div class="eyebrow">2026.11.22 · FIELD NOTE 005</div><blockquote id="todayRemark">你今天没有急着换新主题，而是要求继续把 scrib / script 学扎实，还主动要求换题再测。能意识到“看过”不等于“掌握”，这是很好的学习习惯。下一步别贪多，把 inscription、transcription 和容易混淆的 spect 词汇拿下。</blockquote><small>— YOUR AI STUDY PARTNER · APPLE PLANET</small></div></section>
+<section class="section"><div class="section-head"><div><div class="eyebrow">THE STUDY TRAIL</div><h2>学习日历</h2></div><p>最近七天，点亮属于你的格子。</p></div><div class="panel"><div class="week" id="week"></div></div></section>
+<section class="section"><div class="section-head"><div><div class="eyebrow">ADD A LITTLE GROWTH</div><h2>记下今天学了什么</h2></div><p>保存后会出现在下方时间轴。</p></div>
+<div class="panel"><form id="entryForm"><div class="formgrid">
+<div class="field"><label for="date">学习日期</label><input id="date" type="date" required></div>
+<div class="field"><label for="root">词根 / 主题</label><input id="root" placeholder="例如：scrib / script" required></div>
+<div class="field"><label for="count">今天新学的单词数</label><input id="count" type="number" min="0" max="50" value="5"></div>
+<div class="field"><label for="score">小测正确率（%）</label><input id="score" type="number" min="0" max="100" placeholder="例如：80"></div>
+<div class="field"><label for="minutes">学习时长（分钟）</label><input id="minutes" type="number" min="0" max="600" placeholder="例如：25"></div>
+<div class="field"><label for="mood">今天的状态</label><select id="mood"><option>状态不错</option><option>有点吃力</option><option>注意力飘走了</option><option>今天只想轻轻学一点</option><option>突破了一个难点</option></select></div>
+<div class="field wide"><label for="learned">今天学会 / 复习了什么</label><textarea id="learned" placeholder="写下单词、错题，或突然想通的地方……"></textarea></div>
+<div class="field wide"><label for="remark">今天我给你的评语</label><textarea id="remark" placeholder="可以把我在聊天里给你的评语粘贴在这里，也可以写下你想对自己说的话。"></textarea></div>
+</div><div class="actions"><button class="primary" type="submit">✳ 保存今天的记录</button><button class="secondary" type="button" id="export">导出备份</button><button class="secondary" type="button" id="importBtn">导入备份</button><input id="importFile" type="file" accept="application/json" hidden></div></form></div></section>
+<section class="section"><div class="section-head"><div><div class="eyebrow">LITTLE BY LITTLE</div><h2>我的学习时间轴</h2></div><p id="entryCount">2 条已记录</p></div><div class="history" id="history"></div></section>
+<footer class="footer"><span>APPLE PLANET · ENGLISH GARDEN</span><span>GROW AT YOUR OWN PACE ✳</span></footer></div>
+<script>
+(()=>{
+const KEY='applePlanetEnglishGarden.v1';
+const seed=[
+{date:'2026-11-21',root:'spect / port',count:12,score:80,minutes:25,mood:'状态不错',learned:'完成 spect、port 两个词根主题的初步学习；开始积累词根联想。',remark:'第一天就把学习方式搭起来了。别小看这种基础建设：词根不是背单词的捷径，而是让你看见单词之间的亲缘关系。'},
+{date:'2026-11-22',root:'scrib / script',count:6,score:100,minutes:30,mood:'突破了一个难点',learned:'继续第五课 scrib / script；掌握 transcript 小测；待复习 prospective、retrospect、spectacle、spectacular、inscription、transcription。',remark:'你今天没有急着换新主题，而是要求继续把 scrib / script 学扎实，还主动要求换题再测。能意识到“看过”不等于“掌握”，这是很好的学习习惯。下一步别贪多，把待复习词汇拿下。'}
+];
+let entries;try{entries=JSON.parse(localStorage.getItem(KEY))||seed}catch(e){entries=seed}
+const $=id=>document.getElementById(id),today=new Date().toLocaleDateString('en-CA');
+function save(){localStorage.setItem(KEY,JSON.stringify(entries))}
+function render(){
+ const dates=[...new Set(entries.map(x=>x.date))].sort();$('days').textContent=dates.length;
+ $('roots').textContent=new Set(entries.flatMap(x=>x.root.split(/[\/,&、 ]+/).filter(Boolean))).size;
+ $('words').textContent=entries.reduce((n,x)=>n+(+x.count||0),0);
+ let streak=0,d=new Date(today);const set=new Set(dates);while(set.has(d.toLocaleDateString('en-CA'))){streak++;d.setDate(d.getDate()-1)}
+ $('streak').textContent=streak;
+ const recent=entries.slice().sort((a,b)=>b.date.localeCompare(a.date));$('entryCount').textContent=entries.length+' 条已记录';
+ $('history').innerHTML=recent.length?recent.map((x,i)=>'<article class="entry"><div class="entry-top"><span>'+x.date+' · '+(x.mood||'')+'</span><span>'+(x.minutes||0)+' MIN · '+(x.score===''||x.score==null?'—':x.score+'%')+'</span></div><h3>'+esc(x.root)+'</h3><p>'+esc(x.learned||'今天也留下了一点痕迹。')+'</p>'+(x.remark?'<p class="remark">✳ '+esc(x.remark)+'</p>':'')+'<button data-del="'+i+'">删除这条记录</button></article>').join(''):'<div class="panel">还没有记录。今天就是一个很好的开始。</div>';
+ $('history').querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{if(confirm('删除这条学习记录？')){entries.splice(+b.dataset.del,1);save();render()}});
+ const days=[];for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const key=d.toLocaleDateString('en-CA');days.push({key,label:['日','一','二','三','四','五','六'][d.getDay()]})}
+ $('week').innerHTML=days.map(x=>'<div class="day '+(setHas(x.key)?'active':'')+'">'+x.label+'<i></i><span>'+x.key.slice(5).replace('-','.')+'</span></div>').join('');
+}
+function setHas(k){return entries.some(x=>x.date===k)}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('date').value=today;
+$('entryForm').addEventListener('submit',e=>{e.preventDefault();const item={date:$('date').value,root:$('root').value.trim(),count:+$('count').value||0,score:$('score').value===''?'':+$('score').value,minutes:+$('minutes').value||0,mood:$('mood').value,learned:$('learned').value.trim(),remark:$('remark').value.trim()};if(!item.root)return;entries=entries.filter(x=>x.date!==item.date);entries.push(item);save();render();$('entryForm').reset();$('date').value=today;$('count').value=5});
+$('export').onclick=()=>{const blob=new Blob([JSON.stringify(entries,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='apple-planet-english-progress.json';a.click();URL.revokeObjectURL(url)};
+$('importBtn').onclick=()=>$('importFile').click();
+$('importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const data=JSON.parse(await f.text());if(!Array.isArray(data))throw Error();entries=data;save();render();alert('备份已导入。')}catch(err){alert('文件格式不正确。')}e.target.value=''};
+render();
+})();
+</script></body></html>
