@@ -1,98 +1,128 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#050607">
-<title>ARCHIVE 04 — SIGNAL LOST</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080807">
+<title>访客档案 0001 — 一切正常</title>
 <style>
-:root{color-scheme:dark;--red:#c52c25;--green:#8bba91;--white:#d9ddd7;--dim:#68706b}
-*{box-sizing:border-box}html{scroll-behavior:smooth;background:#050607}body{margin:0;background:#050607;color:var(--white);font:14px/1.5 "Courier New",monospace;overflow-x:hidden;cursor:crosshair}
-body:before{content:"";position:fixed;inset:0;z-index:30;pointer-events:none;opacity:.17;background:repeating-linear-gradient(0deg,transparent 0 2px,#d7e2d90b 3px 4px),radial-gradient(ellipse at center,transparent 35%,#000 100%);mix-blend-mode:screen}
-body:after{content:"";position:fixed;inset:0;z-index:29;pointer-events:none;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
-button{font:inherit;color:inherit;background:transparent;border:1px solid #59615b;padding:13px 18px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}button:hover{background:#d7ddd0;color:#090b0a}
-a{color:inherit}.topline{height:42px;border-bottom:1px solid #29302b;display:flex;justify-content:space-between;align-items:center;padding:0 22px;color:#7d8980;font-size:10px;letter-spacing:.16em}
-.signal{color:var(--red)}.wrap{max-width:1080px;margin:auto;padding:0 24px}
-.intro{min-height:calc(100svh - 42px);display:grid;place-items:center;text-align:center;position:relative;padding:60px 0}
-.intro:before{content:"";position:absolute;width:min(70vw,620px);aspect-ratio:1;border:1px solid #252b27;border-radius:50%;box-shadow:0 0 100px #19231c30,inset 0 0 100px #19231c25}
-.kicker{color:var(--red);font-size:10px;letter-spacing:.34em}
-h1{font-size:clamp(44px,9vw,100px);line-height:.88;letter-spacing:-.08em;font-weight:400;margin:25px 0;text-shadow:0 0 22px #a4b6a015}
-.sub{color:#89938b;max-width:450px;margin:0 auto 32px;font-size:12px;letter-spacing:.05em}
-#start{border-color:#9c332d;color:#e3d8d3;position:relative;z-index:1}
-#start:hover{background:#9c332d;color:white}
-.warning{margin-top:20px;color:#59615b;font-size:9px;letter-spacing:.12em}
-#experience{display:none}
-.monitor-shell{padding:34px 0 100px;min-height:100vh}
-.monitor-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#78847b;font-size:10px;letter-spacing:.14em;border-bottom:1px solid #28302a;padding-bottom:13px}
-.rec{color:var(--red);animation:rec 1.2s steps(2) infinite}@keyframes rec{50%{opacity:.25}}
-.feed{height:min(68vw,570px);min-height:330px;position:relative;margin:22px 0;background:#111713;border:1px solid #333b34;overflow:hidden;display:grid;place-items:center}
-.feed:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,#c9d4c60a 50%,transparent 50.2%),linear-gradient(transparent 49.8%,#c9d4c60a 50%,transparent 50.2%),radial-gradient(ellipse at 50% 48%,#39453b 0,#161d18 44%,#050706 100%)}
-.camera-label{position:absolute;top:14px;left:16px;color:#a4b2a5;font-size:10px;z-index:2}
-.camera-time{position:absolute;top:14px;right:16px;color:#b3beb4;font-size:11px;z-index:2}
-.cam-bottom{position:absolute;bottom:14px;left:16px;right:16px;display:flex;justify-content:space-between;color:#9aa69b;font-size:10px;z-index:2}
-.room{position:absolute;inset:0;opacity:.65}
-.door{position:absolute;width:23%;height:76%;left:39%;bottom:0;border:2px solid #465147;background:linear-gradient(90deg,#0a0e0b,#202820 45%,#080b09);box-shadow:0 0 30px #000}
-.door:after{content:"";position:absolute;right:12%;top:50%;width:5px;height:5px;background:#8e9a8c;border-radius:50%}
-.shadow-person{position:absolute;width:19%;height:70%;bottom:-3%;left:42%;background:#030504;clip-path:polygon(39% 0,61% 0,72% 12%,74% 25%,88% 38%,100% 100%,0 100%,12% 38%,26% 25%,28% 12%);filter:blur(4px);opacity:0;transition:opacity 1.8s}
-.feed.seen .shadow-person{opacity:.8}
-.feed.glitch{animation:glitch .22s steps(2) 5}
-@keyframes glitch{0%{transform:translate(0)}25%{transform:translate(5px,-2px);filter:hue-rotate(40deg)}50%{transform:translate(-4px,2px);filter:contrast(2)}75%{transform:translate(2px,3px)}}
-.caption{min-height:70px;color:#aab2aa;font-size:12px;max-width:650px;white-space:pre-line}
-.log{border-top:1px solid #28302a;margin-top:28px;padding-top:18px;color:#657168;font-size:10px;line-height:2}
-.log p{margin:0}.log .bad{color:#b65a52}
-.spacer{height:48vh;display:grid;place-items:center;color:#3f4941;font-size:10px;letter-spacing:.3em}
-#scare{position:fixed;inset:0;z-index:100;background:#020303;display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .08s}
-#scare.active{opacity:1;visibility:visible}
-.face{width:min(85vw,650px);height:min(85vh,720px);filter:contrast(1.4) brightness(.65) drop-shadow(0 0 30px #8e1616);transform:scale(1.12)}
-#scare .message{position:absolute;bottom:5vh;color:#c9c3b8;font-size:10px;letter-spacing:.3em}
-#after{position:fixed;inset:0;z-index:101;background:#030404;display:none;place-items:center;text-align:center;padding:25px}
-#after.show{display:grid}#after h2{font-size:clamp(28px,6vw,65px);font-weight:400;letter-spacing:-.06em}#after p{color:#788078;font-size:10px;letter-spacing:.2em}
-@media(max-width:600px){.topline{padding:0 12px;font-size:8px}.wrap{padding:0 15px}.feed{min-height:300px}.monitor-shell{padding-top:22px}}
+:root{--bg:#080807;--paper:#c9c4b5;--muted:#68675f;--red:#8e2525;--green:#9ca58a;--line:#292922}
+*{box-sizing:border-box}html{background:var(--bg);scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--paper);font:13px/1.8 "Courier New",monospace;overflow-x:hidden;cursor:crosshair}
+body:before{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.13;background:repeating-linear-gradient(0deg,transparent 0 2px,#fff 3px,transparent 4px);mix-blend-mode:overlay}
+body:after{content:"";position:fixed;inset:0;z-index:49;pointer-events:none;background:radial-gradient(ellipse at center,transparent 38%,#000 100%);opacity:.75}
+::selection{background:#7d2525;color:#fff}a,button{color:inherit}button{font:inherit;background:transparent;border:1px solid #514d43;padding:11px 16px;cursor:pointer;letter-spacing:.12em}button:hover{background:#d0c8b5;color:#111}
+a{color:#aaa58f}.bar{height:34px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:0 18px;color:#777468;font-size:10px;letter-spacing:.12em}
+.dot{color:#8e2929;animation:blink 1.4s steps(2) infinite}@keyframes blink{50%{opacity:.2}}
+main{max-width:920px;margin:auto;padding:0 24px}.hero{min-height:calc(100svh - 34px);display:flex;align-items:center;justify-content:center;text-align:center;position:relative}
+.hero:before{content:"";position:absolute;width:min(75vw,620px);aspect-ratio:1;border:1px solid #27271f;border-radius:50%;box-shadow:0 0 100px #20201830,inset 0 0 100px #29291d22}
+.hero-inner{position:relative;z-index:1;max-width:600px}.tiny{font-size:10px;color:#8b8879;letter-spacing:.25em}.hero h1{font:normal clamp(42px,9vw,94px)/.95 Georgia,serif;letter-spacing:-.06em;margin:30px 0 20px;color:#d0cbbb;text-shadow:0 0 28px #b9b09a1c}
+.hero p{color:#8a877b;max-width:410px;margin:0 auto 28px;font-size:12px}.enter{border-color:#70403a;color:#d7c8b8}.footnote{font-size:9px;color:#56554d;margin-top:18px;letter-spacing:.15em}
+#site{display:none;padding-bottom:150px}.top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:25px 0 12px;color:#77766c;font-size:10px;letter-spacing:.13em}
+h2{font:normal clamp(28px,5vw,47px)/1.1 Georgia,serif;letter-spacing:-.04em;margin:48px 0 15px}.lede{color:#858276;max-width:590px}
+.paper{margin:42px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;display:grid;grid-template-columns:1fr 190px;gap:25px}
+.paper p{margin:0 0 12px}.stamp{border:1px solid #493d35;color:#8c4d43;display:grid;place-items:center;min-height:140px;font-size:11px;letter-spacing:.2em;transform:rotate(2deg);opacity:.8}
+.section{margin:55px 0}.label{color:#8e3c35;font-size:10px;letter-spacing:.22em;margin-bottom:14px}.log{border-left:1px solid #39372f;padding-left:18px;color:#777468;font-size:11px}.log p{margin:8px 0}.bad{color:#a85b50}.quiet{color:#4f5148}
+.photo{height:310px;position:relative;overflow:hidden;border:1px solid #292a23;background:linear-gradient(180deg,#171812,#080907);display:grid;place-items:center;margin:20px 0}
+.window{position:absolute;width:35%;height:83%;left:33%;bottom:-1px;border:1px solid #4c4a3e;background:linear-gradient(90deg,#090a08,#1a1b14 50%,#090a08);box-shadow:0 0 60px #000}
+.figure{position:absolute;bottom:-20px;left:42%;height:86%;width:17%;opacity:0;background:#020302;filter:blur(5px);clip-path:polygon(35% 0,65% 0,76% 13%,75% 25%,90% 42%,100% 100%,0 100%,10% 42%,25% 25%,24% 13%);transition:opacity 2s}
+.photo.present .figure{opacity:.95}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,#fff1 50%,transparent 50.2%),linear-gradient(transparent 49.8%,#fff1 50%,transparent 50.2%);pointer-events:none}
+.photo small{position:absolute;top:12px;left:14px;color:#929080;font-size:9px;z-index:2}.photo .time{position:absolute;right:14px;top:12px;color:#929080;font-size:9px;z-index:2}
+.caption{position:absolute;bottom:12px;left:14px;right:14px;display:flex;justify-content:space-between;color:#77766a;font-size:9px;z-index:2}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.actions button{font-size:10px}
+#answer{margin-top:22px;color:#a85b50;min-height:35px}
+#terminal{background:#0d0e0b;border:1px solid #2d2c24;padding:17px;color:#77776b;min-height:150px;font-size:11px;white-space:pre-wrap}
+#inputline{display:flex;gap:8px;margin-top:10px}#answerInput{flex:1;min-width:0;background:#10110e;border:1px solid #35352b;color:#c8c1b0;padding:12px;font:inherit;outline:none}
+#cursorNote{position:fixed;z-index:45;pointer-events:none;color:#a34e45;font-size:9px;letter-spacing:.15em;opacity:0;transition:opacity .3s}
+#modal{position:fixed;inset:0;z-index:100;background:#020302;display:none;place-items:center;text-align:center;padding:25px}
+#modal.show{display:grid}.modal-inner{max-width:620px}.modal-inner h2{font:normal clamp(36px,8vw,80px)/.95 Georgia,serif;margin:20px 0;color:#d3cbbb}.modal-inner p{color:#8d8a7e;font-size:11px;letter-spacing:.12em}
+.face{width:min(75vw,470px);height:min(60vh,500px);filter:contrast(1.5) brightness(.55) drop-shadow(0 0 35px #6e1717);animation:facein .16s steps(2) infinite alternate}
+@keyframes facein{from{transform:scale(1.04) translateX(-3px)}to{transform:scale(1.1) translateX(3px)}}
+#end{display:none;position:fixed;inset:0;z-index:101;background:#030403;place-items:center;text-align:center;padding:25px}#end.show{display:grid}
+#end h2{font:normal clamp(32px,7vw,70px)/1 Georgia,serif}
+body.wrong{animation:wrong .15s steps(2) 4}@keyframes wrong{25%{transform:translateX(4px);filter:invert(.12)}75%{transform:translateX(-3px)}}
+@media(max-width:650px){main{padding:0 17px}.paper{grid-template-columns:1fr}.stamp{min-height:80px}.photo{height:250px}.bar{padding:0 10px;font-size:8px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="topline"><span>INDEPENDENT ARCHIVE / TAPE 04</span><span class="signal">● SIGNAL UNSTABLE</span></div>
-<section class="intro" id="intro"><div class="wrap"><div class="kicker">RECOVERED FOOTAGE — DO NOT DISTRIBUTE</div><h1>THE ROOM<br>IS NOT EMPTY.</h1><p class="sub">A damaged recording was recovered from an apartment building that has been vacant for eleven years. The final 43 seconds were not included in the original file.</p><button id="start">▶ &nbsp; RESTORE RECORDING</button><div class="warning">HEADPHONES RECOMMENDED · FICTIONAL HORROR EXPERIENCE</div></div></section>
-<main id="experience"><div class="wrap monitor-shell">
-<div class="monitor-head"><span>CAM 04 / EAST HALLWAY</span><span class="rec">● REC</span><span id="clock">02:13:08 AM</span></div>
-<div class="feed" id="feed"><div class="room"><div class="door"></div><div class="shadow-person"></div></div><span class="camera-label">CH04 // NIGHT VISION</span><span class="camera-time" id="stamp">11-03-2009 02:13:08</span><div class="cam-bottom"><span>NO MOTION DETECTED</span><span>IR: ON &nbsp; AUDIO: --</span></div></div>
-<div class="caption" id="caption">Restoring damaged frames…</div>
-<div class="log" id="log"><p>[02:13:08] FILE OPENED</p><p>[02:13:09] IMAGE CORRUPTION: 17%</p></div>
-<div class="spacer">KEEP WATCHING THE DOOR</div>
-<div class="monitor-head"><span>ARCHIVE STATUS</span><span id="status">PLAYBACK IN PROGRESS</span></div>
-</div></main>
-<div id="scare" aria-hidden="true">
-<svg class="face" viewBox="0 0 600 720" xmlns="http://www.w3.org/2000/svg" aria-label="A distorted shadowy face">
-<defs><radialGradient id="skin"><stop stop-color="#b9b4a5"/><stop offset=".55" stop-color="#54564e"/><stop offset="1" stop-color="#050606"/></radialGradient><filter id="rough"><feTurbulence baseFrequency=".035" numOctaves="3" seed="8" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="18"/></filter></defs>
-<path d="M300 28 C135 20 80 160 92 360 C98 555 180 700 300 710 C420 700 502 555 508 360 C520 160 465 20 300 28Z" fill="url(#skin)" filter="url(#rough)"/>
-<path d="M115 290 Q190 210 270 292 Q190 340 115 290Z" fill="#030303"/><path d="M330 292 Q410 210 485 290 Q410 340 330 292Z" fill="#030303"/>
-<ellipse cx="195" cy="292" rx="18" ry="10" fill="#d8d4c5"/><ellipse cx="405" cy="292" rx="18" ry="10" fill="#d8d4c5"/>
-<circle cx="195" cy="292" r="6" fill="#080808"/><circle cx="405" cy="292" r="6" fill="#080808"/>
-<path d="M300 300 L270 450 L325 454" fill="none" stroke="#22231f" stroke-width="22"/>
-<path d="M205 530 Q300 475 395 530 Q300 650 205 530Z" fill="#080707"/><path d="M225 530 Q300 555 375 530" stroke="#aaa397" stroke-width="7" fill="none"/>
-<path d="M145 180 Q300 110 455 180" stroke="#080909" stroke-width="28" fill="none"/>
-</svg><div class="message">YOU WERE NOT SUPPOSED TO SEE THIS FRAME.</div>
-</div>
-<div id="after"><div><h2>THE CAMERA WAS FACING THE WALL.</h2><p>THEN WHO WAS STANDING IN FRONT OF IT?</p><button id="again">REPLAY TAPE</button></div></div>
+<div class="bar"><span>PRIVATE WEB ARCHIVE / 2004—2013</span><span><i class="dot">●</i> CONNECTION: LOCAL</span></div>
+<section class="hero" id="welcome"><div class="hero-inner">
+<div class="tiny">PERSONAL HOMEPAGE RECOVERED FROM A DEAD SERVER</div>
+<h1>一切正常。<br><span style="font-size:.48em;letter-spacing:.02em">EVERYTHING IS FINE.</span></h1>
+<p>这是一个普通人的私人网站。站主已经很久没有更新了。<br>如果你认识她，请告诉她：有人来过。</p>
+<button class="enter" id="enter">打开这份档案　↗</button>
+<div class="footnote">建议独自体验 · 音效需点击后启用 · 纯虚构恐怖作品</div>
+</div></section>
+<main id="site">
+<div class="top"><span>FILE: PERSONAL_001.HTML</span><span>LAST MODIFIED: 2013.10.31</span><span id="visitors">VISITOR: 0001</span></div>
+<h2>欢迎回来。</h2>
+<p class="lede">你可能不记得这里了。没关系。这里的东西都没有变。除了房间。还有住在房间里的人。</p>
+<div class="paper"><div><div class="label">NOTE FROM THE OWNER</div>
+<p>你好，陌生人。</p><p>我做这个网站是因为我不喜欢打电话。这里可以放照片、日记和一些没什么意义的东西。</p><p>如果你看到这段话，说明网站还活着。</p><p class="quiet">如果你看到第二段不同的文字，请不要告诉任何人。</p></div><div class="stamp">她不在家<br><span style="font-size:8px">PLEASE LEAVE A MESSAGE</span></div></div>
+<section class="section"><div class="label">01 / THE LAST PHOTOGRAPH</div><h2>走廊尽头的门</h2><p>这张照片拍摄于网站停止更新的前一天。照片里没有人。站主说，她拍照的时候，门是关着的。</p>
+<div class="photo" id="photo"><small>IMG_1031.JPG / 02:13 AM</small><span class="time" id="photoTime">31 OCT 2013</span><div class="window"></div><div class="figure" id="figure"></div><div class="caption"><span>NO FLASH / ISO 800</span><span id="photoCaption">EMPTY HALLWAY</span></div></div>
+<p class="quiet" id="photoText">你可以继续往下看。</p>
+</section>
+<section class="section"><div class="label">02 / VISITOR LOG</div><h2>访客记录</h2><div class="log" id="log">
+<p>2009.04.11　访客 0001　来自：本机</p>
+<p>2010.08.22　访客 0001　来自：本机</p>
+<p>2013.10.31　访客 0001　来自：本机</p>
+<p class="quiet">2013.10.31　访客 0002　来自：<span id="origin">未知</span></p>
+</div><p id="logNote" class="quiet">这台服务器没有连接外部网络。</p></section>
+<section class="section"><div class="label">03 / GUESTBOOK</div><h2>留言板</h2><p>站主不常回复，但她会看。</p>
+<div id="terminal">GUESTBOOK.EXE
+------------------------------
+留言：你好，有人在吗？
+回复：谢谢你来看我。
+
+留言：你什么时候回来？
+回复：我一直在这里。</div>
+<div id="inputline"><input id="answerInput" maxlength="80" placeholder="写下一条留言……"><button id="send">发送</button></div><div id="answer"></div>
+</section>
+<section class="section"><div class="label">04 / SYSTEM MESSAGE</div><h2>最后一条系统消息</h2><p id="finalText">检测到一个未完成的访客会话。是否继续？</p>
+<div class="actions"><button id="continue">继续读取</button><button id="leave">离开网站</button></div>
+</section>
+<div class="top"><span>END OF ARCHIVE</span><span id="footerStatus">THANK YOU FOR VISITING</span></div>
+</main>
+<div id="cursorNote">别回头。</div>
+<div id="modal"><div class="modal-inner">
+<svg class="face" viewBox="0 0 500 540" xmlns="http://www.w3.org/2000/svg">
+<defs><radialGradient id="p"><stop stop-color="#b7b09e"/><stop offset=".55" stop-color="#55564e"/><stop offset="1" stop-color="#050605"/></radialGradient><filter id="dist"><feTurbulence baseFrequency=".04" numOctaves="3" seed="12"/><feDisplacementMap in="SourceGraphic" scale="22"/></filter></defs>
+<path d="M250 12C110 4 55 115 68 280c8 150 75 250 182 250s174-100 182-250C445 115 390 4 250 12Z" fill="url(#p)" filter="url(#dist)"/>
+<path d="M85 220Q160 145 235 225Q160 280 85 220M265 225Q340 145 415 220Q340 280 265 225" fill="#030303"/>
+<ellipse cx="160" cy="222" rx="15" ry="7" fill="#d7d1bd"/><ellipse cx="340" cy="222" rx="15" ry="7" fill="#d7d1bd"/>
+<path d="M250 230L220 360L278 365" stroke="#24251f" stroke-width="20" fill="none"/>
+<path d="M160 415Q250 365 340 415Q250 510 160 415Z" fill="#050505"/><path d="M180 415Q250 440 320 415" stroke="#b5ad9a" stroke-width="6" fill="none"/>
+</svg>
+<h2 id="modalTitle">你终于看见我了。</h2><p id="modalText">不要关闭这个页面。</p>
+</div></div>
+<div id="end"><div><div class="tiny">SESSION CLOSED</div><h2>你离开了。<br>她还没有。</h2><p>这份档案已保存。下次打开时，她会记得。</p><button id="restart">重新打开档案</button></div></div>
 <script>
 (()=>{
-const start=document.getElementById('start'),intro=document.getElementById('intro'),experience=document.getElementById('experience'),feed=document.getElementById('feed'),caption=document.getElementById('caption'),log=document.getElementById('log'),scare=document.getElementById('scare'),after=document.getElementById('after'),status=document.getElementById('status');
-let audioCtx=null,started=false,scared=false,timers=[],audioNodes=[];
+const $=id=>document.getElementById(id);
+let audio=null,started=false,stage=0,timers=[],moved=false,typed=false;
 function later(fn,ms){timers.push(setTimeout(fn,ms))}
-function line(t,bad=false){const p=document.createElement('p');p.textContent=t;if(bad)p.className='bad';log.appendChild(p)}
-function tone(freq,duration,gain=.025,type='sine'){if(!audioCtx)return;const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.value=freq;g.gain.setValueAtTime(gain,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+duration);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+duration);audioNodes.push(o)}
-function staticBurst(){if(!audioCtx)return;const n=audioCtx.sampleRate*.32,b=audioCtx.createBuffer(1,n,audioCtx.sampleRate),d=b.getChannelData(0);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*.22;const s=audioCtx.createBufferSource(),g=audioCtx.createGain();s.buffer=b;g.gain.value=.13;s.connect(g);g.connect(audioCtx.destination);s.start()}
-function reset(){timers.forEach(clearTimeout);timers=[];scared=false;started=false;after.classList.remove('show');scare.classList.remove('active');experience.style.display='none';intro.style.display='grid';feed.classList.remove('seen','glitch');log.innerHTML='<p>[02:13:08] FILE OPENED</p><p>[02:13:09] IMAGE CORRUPTION: 17%</p>';caption.textContent='Restoring damaged frames…';status.textContent='PLAYBACK IN PROGRESS'}
-function jump(){if(scared)return;scared=true;feed.classList.add('glitch');staticBurst();tone(92,.8,.09,'sawtooth');scare.classList.add('active');status.textContent='FRAME RECOVERED';later(()=>{scare.classList.remove('active');after.classList.add('show')},1250)}
-function begin(){if(started)return;started=true;intro.style.display='none';experience.style.display='block';experience.scrollIntoView();try{audioCtx=new (window.AudioContext||window.webkitAudioContext)();audioCtx.resume();tone(48,3,.018)}catch(e){}
-caption.textContent='The hallway is empty. The clock has not moved in eleven years.';
-later(()=>{line('[02:13:14] MOTION DETECTED — FRAME 188',true);caption.textContent='Motion detected at the far end of the hallway.';feed.classList.add('seen');tone(54,2,.035)},6500);
-later(()=>{line('[02:13:21] SUBJECT COUNT: 02',true);caption.textContent='There is a second figure in the room. The door has not opened.';document.querySelector('.cam-bottom span').textContent='SUBJECT COUNT: 02';tone(41,3,.04)},14000);
-later(()=>{line('[02:13:29] CAMERA POSITION CHANGED',true);caption.textContent='The camera is moving. No one has accessed the control room.';feed.classList.add('glitch');staticBurst()},22000);
-later(()=>{line('[02:13:36] WARNING: SUBJECT FACING CAMERA',true);caption.textContent='It is looking directly into the lens now.';document.querySelector('.shadow-person').style.opacity='1';tone(37,4,.045)},30000);
-later(()=>{line('[02:13:49] FINAL FRAME RESTORED',true);caption.textContent='The recovered frame does not match the room.';jump()},39000);
+function beep(f=48,d=.5,v=.025,type='sine'){if(!audio)return;const o=audio.createOscillator(),g=audio.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(v,audio.currentTime);g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+d);o.connect(g);g.connect(audio.destination);o.start();o.stop(audio.currentTime+d)}
+function noise(){if(!audio)return;const n=audio.sampleRate*.5,b=audio.createBuffer(1,n,audio.sampleRate),a=b.getChannelData(0);for(let i=0;i<n;i++)a[i]=(Math.random()*2-1)*.24;const s=audio.createBufferSource(),g=audio.createGain();s.buffer=b;g.gain.value=.12;s.connect(g);g.connect(audio.destination);s.start()}
+function addLog(t){const p=document.createElement('p');p.className='bad';p.textContent=t;$('log').appendChild(p)}
+function start(){
+ if(started)return;started=true;$('welcome').style.display='none';$('site').style.display='block';$('site').scrollIntoView();
+ try{audio=new(window.AudioContext||window.webkitAudioContext)();audio.resume();beep(43,2,.018)}catch(e){}
+ later(()=>{$('visitors').textContent='VISITOR: 0002';$('origin').textContent='你身后';$('logNote').textContent='奇怪。访客记录刚刚增加了一条。';addLog('现在　访客 0002　来自：你身后');beep(51,1,.025)},8500);
+ later(()=>{$('photo').classList.add('present');$('photoCaption').textContent='SUBJECT DETECTED';$('photoText').textContent='照片里多了一个人。你刚才看见了吗？';addLog('系统：照片文件已被修改。');beep(39,2,.035)},18000);
+ later(()=>{$('photoTime').textContent='NOW';$('finalText').textContent='检测到访客正在阅读这条消息。访客位置：房间内。';$('footerStatus').textContent='SOMEONE IS STILL HERE';document.title='别往后看。';noise()},28000);
+ later(()=>{if(!typed){$('answer').textContent='留言已自动保存：我看见你了。';$('terminal').textContent+='\\n\\n留言：我看见你了。\\n回复：那你为什么还不转过来？';$('answerInput').value='';}},37000);
+ later(()=>{$('modal').classList.add('show');$('modalTitle').textContent='你终于看见我了。';$('modalText').textContent='我一直站在你身后。';noise();beep(33,1.2,.12,'sawtooth');},49000);
+ later(()=>{$('modal').classList.remove('show');$('end').classList.add('show')},51500);
 }
-start.addEventListener('click',begin);document.getElementById('again').addEventListener('click',reset);
+$('enter').addEventListener('click',start);
+$('send').addEventListener('click',()=>{const v=$('answerInput').value.trim();if(!v)return;typed=true;$('terminal').textContent+='\\n\\n留言：'+v+'\\n回复：你不应该回答我。';$('answer').textContent='留言已发送。';$('answerInput').value='';if(/谁|你|在|后面|看见|认识/.test(v)){later(()=>{$('answer').textContent='新回复：不要回头。';beep(42,.8,.04)},1800)}});
+$('answerInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('send').click()});
+$('continue').addEventListener('click',()=>{stage++;if(stage===1){$('finalText').textContent='你还在看。她说她很高兴。';$('footerStatus').textContent='PLEASE STAY';beep(42,1,.03)}else{$('finalText').textContent='不要再按了。她已经走到门口了。';$('photo').classList.add('present');noise()}});
+$('leave').addEventListener('click',()=>{$('end').classList.add('show');$('end').querySelector('h2').innerHTML='你离开了。<br>她还没有。'});
+$('restart').addEventListener('click',()=>{timers.forEach(clearTimeout);timers=[];started=false;stage=0;typed=false;$('end').classList.remove('show');$('modal').classList.remove('show');$('site').style.display='none';$('welcome').style.display='flex';$('photo').classList.remove('present');$('photoCaption').textContent='EMPTY HALLWAY';$('photoTime').textContent='31 OCT 2013';$('photoText').textContent='你可以继续往下看。';$('log').innerHTML='<p>2009.04.11　访客 0001　来自：本机</p><p>2010.08.22　访客 0001　来自：本机</p><p>2013.10.31　访客 0001　来自：本机</p><p class="quiet">2013.10.31　访客 0002　来自：<span id="origin">未知</span></p>';$('logNote').textContent='这台服务器没有连接外部网络。';$('terminal').textContent='GUESTBOOK.EXE\\n------------------------------\\n留言：你好，有人在吗？\\n回复：谢谢你来看我。\\n\\n留言：你什么时候回来？\\n回复：我一直在这里。';$('answer').textContent='';$('finalText').textContent='检测到一个未完成的访客会话。是否继续？';document.title='访客档案 0001 — 一切正常'});
+document.addEventListener('mousemove',e=>{if(!started||moved)return;if(e.clientY<80){moved=true;$('cursorNote').style.left=Math.min(innerWidth-100,e.clientX+14)+'px';$('cursorNote').style.top=(e.clientY+16)+'px';$('cursorNote').style.opacity='1';later(()=>$('cursorNote').style.opacity='0',2200)}});
 })();
 </script>
 </body></html>
