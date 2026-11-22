@@ -20,7 +20,7 @@
 <section class="stats">
 <div class="stat"><small>STUDY DAYS / 学习天数</small><strong id="days">2</strong><span>每一次打开书本都算数</span></div>
 <div class="stat"><small>ROOTS / 词根主题</small><strong id="roots">3</strong><span>从词根长出词汇森林</span></div>
-<div class="stat"><small>WORDS / 记录词汇</small><strong id="words">18</strong><span>以实际记录为准</span></div>
+<div class="stat"><small>WORDS / 记录词汇</small><strong id="words">0</strong><span>以实际记录为准</span></div>
 <div class="stat"><small>STREAK / 连续学习</small><strong id="streak">2</strong><span>慢慢养成自己的节奏</span></div>
 </section>
 <section class="section"><div class="section-head"><div><div class="eyebrow">YOUR LEARNING MAP</div><h2>正在生长的知识</h2></div><p>不是考试排名，是自己的进度地图。</p></div>
@@ -50,8 +50,8 @@
 (()=>{
 const KEY='applePlanetEnglishGarden.v1';
 const seed=[
-{date:'2026-11-21',root:'spect / port',count:12,score:80,minutes:25,mood:'状态不错',learned:'完成 spect、port 两个词根主题的初步学习；开始积累词根联想。',remark:'第一天就把学习方式搭起来了。别小看这种基础建设：词根不是背单词的捷径，而是让你看见单词之间的亲缘关系。'},
-{date:'2026-11-22',root:'scrib / script',count:6,score:100,minutes:30,mood:'突破了一个难点',learned:'继续第五课 scrib / script；掌握 transcript 小测；待复习 prospective、retrospect、spectacle、spectacular、inscription、transcription。',remark:'你今天没有急着换新主题，而是要求继续把 scrib / script 学扎实，还主动要求换题再测。能意识到“看过”不等于“掌握”，这是很好的学习习惯。下一步别贪多，把待复习词汇拿下。'}
+{date:'2026-11-21',root:'spect / port',count:0,score:'',minutes:0,mood:'状态不错',learned:'完成 spect、port 两个词根主题的初步学习；开始积累词根联想。',remark:'第一天就把学习方式搭起来了。别小看这种基础建设：词根不是背单词的捷径，而是让你看见单词之间的亲缘关系。'},
+{date:'2026-11-22',root:'scrib / script',count:0,score:'',minutes:0,mood:'突破了一个难点',learned:'继续第五课 scrib / script；掌握 transcript 小测；待复习 prospective、retrospect、spectacle、spectacular、inscription、transcription。',remark:'你今天没有急着换新主题，而是要求继续把 scrib / script 学扎实，还主动要求换题再测。能意识到“看过”不等于“掌握”，这是很好的学习习惯。下一步别贪多，把待复习词汇拿下。'}
 ];
 let entries;try{entries=JSON.parse(localStorage.getItem(KEY))||seed}catch(e){entries=seed}
 const $=id=>document.getElementById(id),today=new Date().toLocaleDateString('en-CA');
