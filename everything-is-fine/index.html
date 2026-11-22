@@ -143,7 +143,7 @@ $('inspect').addEventListener('click',()=>{$('evidenceNote').textContent='EXIF�
 $('compare').addEventListener('click',()=>{$('evidenceNote').textContent='比对结果：四张照片中的门把手位置完全相同。只有最后一张，多出了一只握着门把手的手。';$('photo').classList.add('present');noise()});
 let answers=0;$('quiz').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{answers++;b.classList.add('selected');$('meterFill').style.width=Math.min(100,answers*33.333)+'%';const replies=['确认收到。门锁状态：无法读取。','确认收到。门外检测到移动。','确认收到。系统现在知道你在犹豫。'];$('quizReply').textContent=replies[Math.min(answers-1,2)];if(answers>=3){$('quizReply').textContent='检查完成。房间人数：2。';$('footerStatus').textContent='OCCUPANCY: 02';beep(31,1,.06,'sawtooth')}}));
 $('resetQuiz').addEventListener('click',()=>{answers=0;$('meterFill').style.width='0';$('quizReply').textContent='等待确认……';$('quiz').querySelectorAll('button').forEach(b=>b.classList.remove('selected'))});
-\ndocument.addEventListener('mousemove',e=>{if(!started||moved)return;if(e.clientY<80){moved=true;$('cursorNote').style.left=Math.min(innerWidth-100,e.clientX+14)+'px';$('cursorNote').style.top=(e.clientY+16)+'px';$('cursorNote').style.opacity='1';later(()=>$('cursorNote').style.opacity='0',2200)}});
+document.addEventListener('mousemove',e=>{if(!started||moved)return;if(e.clientY<80){moved=true;$('cursorNote').style.left=Math.min(innerWidth-100,e.clientX+14)+'px';$('cursorNote').style.top=(e.clientY+16)+'px';$('cursorNote').style.opacity='1';later(()=>$('cursorNote').style.opacity='0',2200)}});
 })();
 </script>
 </body></html>
